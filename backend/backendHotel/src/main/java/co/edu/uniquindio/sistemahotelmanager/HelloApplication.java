@@ -1,4 +1,4 @@
-package co.edu.uniquindio;
+package co.edu.uniquindio.sistemahotelmanager;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
