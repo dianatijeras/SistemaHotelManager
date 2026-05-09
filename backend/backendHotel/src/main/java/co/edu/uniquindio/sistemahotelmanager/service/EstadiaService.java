@@ -1,11 +1,13 @@
 package co.edu.uniquindio.sistemahotelmanager.service;
 
+import co.edu.uniquindio.sistemahotelmanager.data.DataStore;
 import co.edu.uniquindio.sistemahotelmanager.enums.EstadoEstadia;
 import co.edu.uniquindio.sistemahotelmanager.enums.EstadoHabitacion;
 import co.edu.uniquindio.sistemahotelmanager.enums.EstadoReserva;
 import co.edu.uniquindio.sistemahotelmanager.model.ConsumoEstadia;
 import co.edu.uniquindio.sistemahotelmanager.model.Estadia;
 import co.edu.uniquindio.sistemahotelmanager.model.Reserva;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;

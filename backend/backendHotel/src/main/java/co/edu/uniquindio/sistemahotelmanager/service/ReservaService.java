@@ -5,6 +5,7 @@ import co.edu.uniquindio.sistemahotelmanager.enums.EstadoReserva;
 import co.edu.uniquindio.sistemahotelmanager.model.Habitacion;
 import co.edu.uniquindio.sistemahotelmanager.model.Huesped;
 import co.edu.uniquindio.sistemahotelmanager.model.Reserva;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;

@@ -1,6 +1,7 @@
 package co.edu.uniquindio.sistemahotelmanager.service;
 
 import co.edu.uniquindio.sistemahotelmanager.model.Huesped;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;

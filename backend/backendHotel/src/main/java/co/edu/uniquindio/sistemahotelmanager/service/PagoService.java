@@ -4,6 +4,7 @@ import co.edu.uniquindio.sistemahotelmanager.enums.EstadoEstadia;
 import co.edu.uniquindio.sistemahotelmanager.enums.EstadoPago;
 import co.edu.uniquindio.sistemahotelmanager.model.Estadia;
 import co.edu.uniquindio.sistemahotelmanager.model.Pago;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
