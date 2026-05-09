@@ -1,4 +1,5 @@
 package co.edu.uniquindio.sistemahotelmanager.data;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import co.edu.uniquindio.sistemahotelmanager.enums.TipoHabitacion;

@@ -1,6 +1,7 @@
 package co.edu.uniquindio.sistemahotelmanager.service;
 
 import co.edu.uniquindio.sistemahotelmanager.data.DataStore;
+import co.edu.uniquindio.sistemahotelmanager.dto.ConsumoRequestDTO;
 import co.edu.uniquindio.sistemahotelmanager.enums.EstadoEstadia;
 import co.edu.uniquindio.sistemahotelmanager.enums.EstadoHabitacion;
 import co.edu.uniquindio.sistemahotelmanager.enums.EstadoReserva;

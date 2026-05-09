@@ -7,6 +7,10 @@ import { StatusBadge } from "../../components/ui/StatusBadge";
 import { Reserva, EstadoReserva } from "../../types";
 import { hotelService } from "../../services/hotelService";
 
+/**
+ * Componente para listar y gestionar reservas del hotel. Permite visualizar todas las reservas, así como confirmar, cancelar o marcar como no-show según el estado de cada reserva.
+ * @constructor
+ */
 export function ReservasList() {
     const [reservas, setReservas] = useState<Reserva[]>([]);
     const [loading, setLoading] = useState(true);

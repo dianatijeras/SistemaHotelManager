@@ -11,6 +11,10 @@ import {
 } from "../types";
 import { NuevoPersonalLimpiezaRequest, NuevoRecepcionistaRequest, Usuario } from "../types/auth";
 
+/**
+ * Funciones de mapeo para convertir las respuestas de la API en los tipos definidos en la aplicación.
+ * @param h
+ */
 const mapHuesped = (h: any): Huesped => ({
     id: h.idHuesped ?? h.id,
     nombre: h.nombre,

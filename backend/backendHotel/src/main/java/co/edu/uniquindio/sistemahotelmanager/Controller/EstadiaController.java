@@ -1,5 +1,6 @@
 package co.edu.uniquindio.sistemahotelmanager.Controller;
 
+import co.edu.uniquindio.sistemahotelmanager.dto.ConsumoRequestDTO;
 import co.edu.uniquindio.sistemahotelmanager.model.Estadia;
 import co.edu.uniquindio.sistemahotelmanager.service.EstadiaService;
 import org.springframework.http.ResponseEntity;
