@@ -5,6 +5,16 @@ import * as SwitchPrimitive from "@radix-ui/react-switch";
 
 import { cn } from "./utils";
 
+/**
+ * Switch es un componente de interfaz de usuario que permite a los usuarios alternar entre dos estados, como encendido/apagado o activo/inactivo.
+ * Es comúnmente utilizado para representar opciones binarias o configuraciones que pueden ser activadas o desactivadas.
+ * El componente Switch se basa en el componente raíz de SwitchPrimitive de Radix UI, y se le aplican estilos personalizados para adaptarse al diseño de la aplicación.
+ * El Switch incluye un "thumb" (el círculo que se mueve) que indica visualmente el estado actual del interruptor.
+ * El componente también maneja estados como "checked" (marcado) y "unchecked" (desmarcado) para reflejar la selección del usuario.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function Switch({
   className,
   ...props

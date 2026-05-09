@@ -5,6 +5,18 @@ import * as SliderPrimitive from "@radix-ui/react-slider";
 
 import { cn } from "./utils";
 
+/**
+ * Slider es un componente de interfaz de usuario que permite a los usuarios seleccionar un valor o un rango de valores dentro de un rango definido.
+ * Es comúnmente utilizado para ajustar configuraciones como el volumen, el brillo o cualquier otro valor numérico que pueda ser representado en una escala.
+ * El componente se basa en la biblioteca Radix UI y se personaliza con estilos adicionales para adaptarse al diseño de la aplicación.
+ * @param className
+ * @param defaultValue
+ * @param value
+ * @param min
+ * @param max
+ * @param props
+ * @constructor
+ */
 function Slider({
   className,
   defaultValue,

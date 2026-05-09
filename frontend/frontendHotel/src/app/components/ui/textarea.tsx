@@ -2,6 +2,13 @@ import * as React from "react";
 
 import { cn } from "./utils";
 
+/**
+ * Textarea es un componente de área de texto que se utiliza para ingresar texto de varias líneas.
+ * Es útil para comentarios, descripciones o cualquier otro tipo de entrada de texto que requiera más espacio que un campo de texto normal.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function Textarea({ className, ...props }: React.ComponentProps<"textarea">) {
   return (
     <textarea

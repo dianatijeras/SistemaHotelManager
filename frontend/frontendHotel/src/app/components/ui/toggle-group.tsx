@@ -7,6 +7,7 @@ import { type VariantProps } from "class-variance-authority";
 import { cn } from "./utils";
 import { toggleVariants } from "./toggle";
 
+
 const ToggleGroupContext = React.createContext<
   VariantProps<typeof toggleVariants>
 >({
@@ -14,6 +15,16 @@ const ToggleGroupContext = React.createContext<
   variant: "default",
 });
 
+/**
+ * ToggleGroup es un componente que agrupa varios ToggleGroupItem, permitiendo que solo uno de ellos esté activo a la vez.
+ * Es útil para crear grupos de botones de opción o pestañas.
+ * @param className
+ * @param variant
+ * @param size
+ * @param children
+ * @param props
+ * @constructor
+ */
 function ToggleGroup({
   className,
   variant,
@@ -40,6 +51,17 @@ function ToggleGroup({
   );
 }
 
+/**
+ * ToggleGroupItem es un componente que representa un elemento individual dentro de un ToggleGroup.
+ * Se utiliza para crear botones de opción o pestañas dentro del grupo.
+ * El estilo del ToggleGroupItem se adapta al contexto del ToggleGroup, pero también puede ser personalizado mediante props.
+ * @param className
+ * @param children
+ * @param variant
+ * @param size
+ * @param props
+ * @constructor
+ */
 function ToggleGroupItem({
   className,
   children,

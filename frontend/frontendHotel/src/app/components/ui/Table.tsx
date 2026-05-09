@@ -1,12 +1,19 @@
 import { ReactNode } from "react";
 import { Search } from "lucide-react";
 
+/**
+ * Una tabla genérica que puede ser utilizada para mostrar cualquier tipo de datos.
+ */
 interface Column<T> {
     key: string;
     label: string;
     render?: (item: T) => ReactNode;
 }
 
+/**
+ * Props para el componente Table.
+ * @template T El tipo de datos que se mostrará en la tabla. Debe tener una propiedad `id` de tipo number o string.
+ */
 interface TableProps<T> {
     data: T[];
     columns: Column<T>[];
@@ -15,6 +22,16 @@ interface TableProps<T> {
     actions?: (item: T) => ReactNode;
 }
 
+/**
+ * Componente de tabla genérica que muestra datos en formato tabular, con soporte para búsqueda y acciones personalizadas.
+ * @template T El tipo de datos que se mostrará en la tabla. Debe tener una propiedad `id` de tipo number o string.
+ * @param data
+ * @param columns
+ * @param onSearch
+ * @param searchPlaceholder
+ * @param actions
+ * @constructor
+ */
 export function Table<T extends { id: number | string }>({
                                                              data,
                                                              columns,

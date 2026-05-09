@@ -5,6 +5,14 @@ import * as SeparatorPrimitive from "@radix-ui/react-separator";
 
 import { cn } from "./utils";
 
+/**
+ * Separador para dividir contenido en la interfaz de usuario.
+ * @param className
+ * @param orientation
+ * @param decorative
+ * @param props
+ * @constructor
+ */
 function Separator({
   className,
   orientation = "horizontal",

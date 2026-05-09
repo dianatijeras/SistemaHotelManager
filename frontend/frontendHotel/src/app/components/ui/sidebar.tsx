@@ -44,6 +44,10 @@ type SidebarContextProps = {
 
 const SidebarContext = React.createContext<SidebarContextProps | null>(null);
 
+/**
+ * el hook useSidebar se encarga de manejar el estado del sidebar, incluyendo si está abierto o cerrado, si está en modo móvil, y proporciona funciones para cambiar el estado.
+ * También se encarga de guardar el estado del sidebar en una cookie para que se mantenga entre sesiones.
+ */
 function useSidebar() {
   const context = React.useContext(SidebarContext);
   if (!context) {
@@ -53,6 +57,17 @@ function useSidebar() {
   return context;
 }
 
+/**
+ * SidebarProvider es el componente que envuelve toda la aplicación y proporciona el contexto del sidebar a todos los componentes hijos.
+ * @param defaultOpen
+ * @param openProp
+ * @param setOpenProp
+ * @param className
+ * @param style
+ * @param children
+ * @param props
+ * @constructor
+ */
 function SidebarProvider({
   defaultOpen = true,
   open: openProp,
@@ -69,8 +84,6 @@ function SidebarProvider({
   const isMobile = useIsMobile();
   const [openMobile, setOpenMobile] = React.useState(false);
 
-  // This is the internal state of the sidebar.
-  // We use openProp and setOpenProp for control from outside the component.
   const [_open, _setOpen] = React.useState(defaultOpen);
   const open = openProp ?? _open;
   const setOpen = React.useCallback(
@@ -82,18 +95,15 @@ function SidebarProvider({
         _setOpen(openState);
       }
 
-      // This sets the cookie to keep the sidebar state.
       document.cookie = `${SIDEBAR_COOKIE_NAME}=${openState}; path=/; max-age=${SIDEBAR_COOKIE_MAX_AGE}`;
     },
     [setOpenProp, open],
   );
 
-  // Helper to toggle the sidebar.
   const toggleSidebar = React.useCallback(() => {
     return isMobile ? setOpenMobile((open) => !open) : setOpen((open) => !open);
   }, [isMobile, setOpen, setOpenMobile]);
 
-  // Adds a keyboard shortcut to toggle the sidebar.
   React.useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (
@@ -109,8 +119,6 @@ function SidebarProvider({
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [toggleSidebar]);
 
-  // We add a state so that we can do data-state="expanded" or "collapsed".
-  // This makes it easier to style the sidebar with Tailwind classes.
   const state = open ? "expanded" : "collapsed";
 
   const contextValue = React.useMemo<SidebarContextProps>(
@@ -151,6 +159,16 @@ function SidebarProvider({
   );
 }
 
+/**
+ * Sidebar es el componente principal del sidebar, que se encarga de renderizar el contenedor del sidebar y manejar su comportamiento en función de las props que recibe.
+ * @param side
+ * @param variant
+ * @param collapsible
+ * @param className
+ * @param children
+ * @param props
+ * @constructor
+ */
 function Sidebar({
   side = "left",
   variant = "sidebar",
@@ -279,6 +297,12 @@ function SidebarTrigger({
   );
 }
 
+/**
+ *
+ * @param className
+ * @param props
+ * @constructor
+ */
 function SidebarRail({ className, ...props }: React.ComponentProps<"button">) {
   const { toggleSidebar } = useSidebar();
 
@@ -304,6 +328,12 @@ function SidebarRail({ className, ...props }: React.ComponentProps<"button">) {
   );
 }
 
+/**
+ * SidebarInset es un componente que se utiliza para renderizar el contenido del sidebar cuando el variant es "inset".
+ * @param className
+ * @param props
+ * @constructor
+ */
 function SidebarInset({ className, ...props }: React.ComponentProps<"main">) {
   return (
     <main
@@ -318,6 +348,12 @@ function SidebarInset({ className, ...props }: React.ComponentProps<"main">) {
   );
 }
 
+/**
+ * SidebarInput es un componente que se utiliza para renderizar un input dentro del sidebar, con estilos específicos para el sidebar.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function SidebarInput({
   className,
   ...props
@@ -332,6 +368,12 @@ function SidebarInput({
   );
 }
 
+/**
+ * SidebarHeader es un componente que se utiliza para renderizar el encabezado del sidebar, con estilos específicos para el sidebar.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function SidebarHeader({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
@@ -343,6 +385,12 @@ function SidebarHeader({ className, ...props }: React.ComponentProps<"div">) {
   );
 }
 
+/**
+ * SidebarFooter es un componente que se utiliza para renderizar el pie de página del sidebar, con estilos específicos para el sidebar.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function SidebarFooter({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
@@ -354,6 +402,12 @@ function SidebarFooter({ className, ...props }: React.ComponentProps<"div">) {
   );
 }
 
+/**
+ * SidebarSeparator es un componente que se utiliza para renderizar un separador dentro del sidebar, con estilos específicos para el sidebar.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function SidebarSeparator({
   className,
   ...props
@@ -368,6 +422,12 @@ function SidebarSeparator({
   );
 }
 
+/**
+ * SidebarContent es un componente que se utiliza para renderizar el contenido principal del sidebar, con estilos específicos para el sidebar.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function SidebarContent({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
@@ -382,6 +442,12 @@ function SidebarContent({ className, ...props }: React.ComponentProps<"div">) {
   );
 }
 
+/**
+ * SidebarGroup es un componente que se utiliza para renderizar un grupo de elementos dentro del sidebar, con estilos específicos para el sidebar.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function SidebarGroup({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
@@ -393,6 +459,14 @@ function SidebarGroup({ className, ...props }: React.ComponentProps<"div">) {
   );
 }
 
+/**
+ * SidebarGroupLabel es un componente que se utiliza para renderizar la etiqueta de un grupo dentro del sidebar, con estilos específicos para el sidebar.
+ * También tiene una variante "icon" que se utiliza cuando el sidebar está colapsado, mostrando solo el icono del grupo.
+ * @param className
+ * @param asChild
+ * @param props
+ * @constructor
+ */
 function SidebarGroupLabel({
   className,
   asChild = false,
@@ -414,6 +488,13 @@ function SidebarGroupLabel({
   );
 }
 
+/**
+ * SidebarGroupAction es un componente que se utiliza para renderizar una acción dentro de un grupo del sidebar, con estilos específicos para el sidebar.
+ * @param className
+ * @param asChild
+ * @param props
+ * @constructor
+ */
 function SidebarGroupAction({
   className,
   asChild = false,
@@ -437,6 +518,12 @@ function SidebarGroupAction({
   );
 }
 
+/**
+ * SidebarGroupContent es un componente que se utiliza para renderizar el contenido de un grupo dentro del sidebar, con estilos específicos para el sidebar.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function SidebarGroupContent({
   className,
   ...props
@@ -451,6 +538,12 @@ function SidebarGroupContent({
   );
 }
 
+/**
+ * SidebarMenu es un componente que se utiliza para renderizar un menú dentro del sidebar, con estilos específicos para el sidebar.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function SidebarMenu({ className, ...props }: React.ComponentProps<"ul">) {
   return (
     <ul
@@ -462,6 +555,12 @@ function SidebarMenu({ className, ...props }: React.ComponentProps<"ul">) {
   );
 }
 
+/**
+ * SidebarMenuItem es un componente que se utiliza para renderizar un elemento de menú dentro del sidebar, con estilos específicos para el sidebar.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function SidebarMenuItem({ className, ...props }: React.ComponentProps<"li">) {
   return (
     <li
@@ -495,6 +594,17 @@ const sidebarMenuButtonVariants = cva(
   },
 );
 
+/**
+ * SidebarMenuButton es un componente que se utiliza para renderizar un botón dentro de un elemento de menú del sidebar, con estilos específicos para el sidebar.
+ * @param asChild
+ * @param isActive
+ * @param variant
+ * @param size
+ * @param tooltip
+ * @param className
+ * @param props
+ * @constructor
+ */
 function SidebarMenuButton({
   asChild = false,
   isActive = false,
@@ -545,6 +655,15 @@ function SidebarMenuButton({
   );
 }
 
+
+/**
+ * SidebarMenuAction es un componente que se utiliza para renderizar una acción dentro de un elemento de menú del sidebar, con estilos específicos para el sidebar.
+ * @param className
+ * @param asChild
+ * @param showOnHover
+ * @param props
+ * @constructor
+ */
 function SidebarMenuAction({
   className,
   asChild = false,
@@ -562,7 +681,6 @@ function SidebarMenuAction({
       data-sidebar="menu-action"
       className={cn(
         "text-sidebar-foreground ring-sidebar-ring hover:bg-sidebar-accent hover:text-sidebar-accent-foreground peer-hover/menu-button:text-sidebar-accent-foreground absolute top-1.5 right-1 flex aspect-square w-5 items-center justify-center rounded-md p-0 outline-hidden transition-transform focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0",
-        // Increases the hit area of the button on mobile.
         "after:absolute after:-inset-2 md:after:hidden",
         "peer-data-[size=sm]/menu-button:top-1",
         "peer-data-[size=default]/menu-button:top-1.5",
@@ -599,6 +717,13 @@ function SidebarMenuBadge({
   );
 }
 
+/**
+ * SidebarMenuSkeleton es un componente que se utiliza para renderizar un esqueleto de un elemento de menú del sidebar, con estilos específicos para el sidebar.
+ * @param className
+ * @param showIcon
+ * @param props
+ * @constructor
+ */
 function SidebarMenuSkeleton({
   className,
   showIcon = false,
@@ -637,6 +762,12 @@ function SidebarMenuSkeleton({
   );
 }
 
+/**
+ * SidebarMenuSub es un componente que se utiliza para renderizar un submenú dentro de un elemento de menú del sidebar, con estilos específicos para el sidebar.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function SidebarMenuSub({ className, ...props }: React.ComponentProps<"ul">) {
   return (
     <ul
@@ -652,6 +783,12 @@ function SidebarMenuSub({ className, ...props }: React.ComponentProps<"ul">) {
   );
 }
 
+/**
+ * SidebarMenuSubItem es un componente que se utiliza para renderizar un elemento de submenú dentro de un submenú del sidebar, con estilos específicos para el sidebar.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function SidebarMenuSubItem({
   className,
   ...props
@@ -666,6 +803,15 @@ function SidebarMenuSubItem({
   );
 }
 
+/**
+ * SidebarMenuSubButton es un componente que se utiliza para renderizar un botón dentro de un elemento de submenú del sidebar, con estilos específicos para el sidebar.
+ * @param asChild
+ * @param size
+ * @param isActive
+ * @param className
+ * @param props
+ * @constructor
+ */
 function SidebarMenuSubButton({
   asChild = false,
   size = "md",
