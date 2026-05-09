@@ -5,6 +5,13 @@ import * as LabelPrimitive from "@radix-ui/react-label";
 
 import { cn } from "./utils";
 
+/**
+ * Componente label para formularios, utilizando Radix UI Label como base.
+ * Permite personalizar estilos y se integra con el sistema de diseño.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function Label({
                    className,
                    ...props

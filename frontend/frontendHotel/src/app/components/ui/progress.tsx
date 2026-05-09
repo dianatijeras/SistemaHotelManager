@@ -5,6 +5,15 @@ import * as ProgressPrimitive from "@radix-ui/react-progress";
 
 import { cn } from "./utils";
 
+/**
+ * Progress es un componente de barra de progreso que muestra visualmente el avance de una tarea o proceso.
+ * Se basa en el componente ProgressPrimitive.Root de Radix UI, y se personaliza con estilos para adaptarse a la apariencia de la aplicación.
+ * El valor de progreso se representa mediante un indicador que se desplaza horizontalmente según el porcentaje completado.
+ * @param className
+ * @param value
+ * @param props
+ * @constructor
+ */
 function Progress({
   className,
   value,

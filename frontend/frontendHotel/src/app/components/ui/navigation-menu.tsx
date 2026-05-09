@@ -5,6 +5,15 @@ import { ChevronDownIcon } from "lucide-react";
 
 import { cn } from "./utils";
 
+/**
+ * NavigationMenu es un componente de menú de navegación que utiliza la biblioteca Radix UI para crear un menú desplegable.
+ * Este componente es altamente personalizable y se puede utilizar para crear menús de navegación en aplicaciones web.
+ * @param className
+ * @param children
+ * @param viewport
+ * @param props
+ * @constructor
+ */
 function NavigationMenu({
   className,
   children,
@@ -29,6 +38,12 @@ function NavigationMenu({
   );
 }
 
+/**
+ * NavigationMenuList es un componente que representa la lista de elementos del menú de navegación.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function NavigationMenuList({
   className,
   ...props
@@ -45,6 +60,12 @@ function NavigationMenuList({
   );
 }
 
+/**
+ * NavigationMenuItem es un componente que representa un elemento individual dentro del menú de navegación.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function NavigationMenuItem({
   className,
   ...props
@@ -62,6 +83,13 @@ const navigationMenuTriggerStyle = cva(
   "group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground disabled:pointer-events-none disabled:opacity-50 data-[state=open]:hover:bg-accent data-[state=open]:text-accent-foreground data-[state=open]:focus:bg-accent data-[state=open]:bg-accent/50 focus-visible:ring-ring/50 outline-none transition-[color,box-shadow] focus-visible:ring-[3px] focus-visible:outline-1",
 );
 
+/**
+ * NavigationMenuTrigger es un componente que representa el botón o enlace que activa la apertura del menú de navegación.
+ * @param className
+ * @param children
+ * @param props
+ * @constructor
+ */
 function NavigationMenuTrigger({
   className,
   children,
@@ -82,6 +110,12 @@ function NavigationMenuTrigger({
   );
 }
 
+/**
+ * NavigationMenuContent es un componente que representa el contenido desplegable del menú de navegación, que se muestra cuando el usuario hace clic en el trigger.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function NavigationMenuContent({
   className,
   ...props
@@ -99,6 +133,13 @@ function NavigationMenuContent({
   );
 }
 
+/**
+ * NavigationMenuViewport es un componente que representa el área donde se muestra el contenido del menú de navegación cuando se despliega.
+ * Este componente se posiciona debajo del trigger y se encarga de mostrar el contenido de manera adecuada.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function NavigationMenuViewport({
   className,
   ...props
@@ -121,6 +162,13 @@ function NavigationMenuViewport({
   );
 }
 
+/**
+ * NavigationMenuLink es un componente que representa un enlace dentro del menú de navegación.
+ * Este componente se utiliza para crear enlaces que los usuarios pueden hacer clic para navegar a diferentes partes de la aplicación.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function NavigationMenuLink({
   className,
   ...props
@@ -137,6 +185,12 @@ function NavigationMenuLink({
   );
 }
 
+/**
+ * NavigationMenuIndicator es un componente que representa un indicador visual dentro del menú de navegación, que se muestra cuando un elemento del menú está activo o seleccionado.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function NavigationMenuIndicator({
   className,
   ...props

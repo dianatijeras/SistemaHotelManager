@@ -2,6 +2,14 @@ import * as React from "react";
 
 import { cn } from "./utils";
 
+/**
+ * Input es un componente de entrada de texto que se puede usar para capturar datos del usuario.
+ * Es un componente estilizado que se basa en el elemento HTML <input> y se puede personalizar mediante props.
+ * @param className
+ * @param type
+ * @param props
+ * @constructor
+ */
 function Input({ className, type, ...props }: React.ComponentProps<"input">) {
     return (
         <input

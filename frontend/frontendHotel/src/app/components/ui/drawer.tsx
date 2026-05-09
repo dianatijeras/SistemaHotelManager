@@ -5,30 +5,61 @@ import { Drawer as DrawerPrimitive } from "vaul";
 
 import { cn } from "./utils";
 
+/**
+ * Componente de Drawer que utiliza el componente raíz de Vaul.
+ * Este componente se encarga de renderizar el contenedor principal del Drawer y pasarle las props necesarias.
+ * @param props
+ * @constructor
+ */
 function Drawer({
                     ...props
                 }: React.ComponentProps<typeof DrawerPrimitive.Root>) {
     return <DrawerPrimitive.Root data-slot="drawer" {...props} />;
 }
 
+/**
+ * Componente de Trigger para el Drawer que utiliza el componente Trigger de Vaul.
+ * Este componente se encarga de renderizar el botón o elemento que activará la apertura del Drawer y pasarle las props necesarias.
+ * @param props
+ * @constructor
+ */
 function DrawerTrigger({
                            ...props
                        }: React.ComponentProps<typeof DrawerPrimitive.Trigger>) {
     return <DrawerPrimitive.Trigger data-slot="drawer-trigger" {...props} />;
 }
 
+/**
+ * Componente de Portal para el Drawer que utiliza el componente Portal de Vaul.
+ * Este componente se encarga de renderizar el contenido del Drawer en un contenedor separado del DOM principal, lo que permite que el Drawer se muestre por encima de otros elementos.
+ * @param props
+ * @constructor
+ */
 function DrawerPortal({
                           ...props
                       }: React.ComponentProps<typeof DrawerPrimitive.Portal>) {
     return <DrawerPrimitive.Portal data-slot="drawer-portal" {...props} />;
 }
 
+/**
+ * Componente de Close para el Drawer que utiliza el componente Close de Vaul.
+ * Este componente se encarga de renderizar el botón o elemento que cerrará el Drawer y pasarle las props necesarias.
+ * @param props
+ * @constructor
+ */
 function DrawerClose({
                          ...props
                      }: React.ComponentProps<typeof DrawerPrimitive.Close>) {
     return <DrawerPrimitive.Close data-slot="drawer-close" {...props} />;
 }
 
+/**
+ * Componente de Overlay para el Drawer que utiliza el componente Overlay de Vaul.
+ * Este componente se encarga de renderizar la capa de fondo que se muestra detrás del Drawer cuando está abierto, y pasarle las props necesarias.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function DrawerOverlay({
                            className,
                            ...props
@@ -45,6 +76,14 @@ function DrawerOverlay({
     );
 }
 
+/**
+ * Componente de Content para el Drawer que utiliza el componente Content de Vaul.
+ * Este componente se encarga de renderizar el contenido principal del Drawer, incluyendo la estructura y el diseño, y pasarle las props necesarias.
+ * @param className
+ * @param children
+ * @param props
+ * @constructor
+ */
 function DrawerContent({
                            className,
                            children,
@@ -72,6 +111,13 @@ function DrawerContent({
     );
 }
 
+/**
+ * Componente de Header para el Drawer que utiliza un div con estilos personalizados.
+ * Este componente se encarga de renderizar la sección de encabezado del Drawer, donde se pueden colocar elementos como el título o botones de acción, y pasarle las props necesarias.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function DrawerHeader({ className, ...props }: React.ComponentProps<"div">) {
     return (
         <div
@@ -82,6 +128,13 @@ function DrawerHeader({ className, ...props }: React.ComponentProps<"div">) {
     );
 }
 
+/**
+ * Componente de Footer para el Drawer que utiliza un div con estilos personalizados.
+ * Este componente se encarga de renderizar la sección de pie de página del Drawer, donde se pueden colocar elementos como botones de acción o información adicional, y pasarle las props necesarias.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function DrawerFooter({ className, ...props }: React.ComponentProps<"div">) {
     return (
         <div
@@ -92,6 +145,13 @@ function DrawerFooter({ className, ...props }: React.ComponentProps<"div">) {
     );
 }
 
+/**
+ * Componente de Title para el Drawer que utiliza el componente Title de Vaul.
+ * Este componente se encarga de renderizar el título del Drawer, aplicando estilos personalizados y pasando las props necesarias.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function DrawerTitle({
                          className,
                          ...props
@@ -105,6 +165,13 @@ function DrawerTitle({
     );
 }
 
+/**
+ * Componente de Description para el Drawer que utiliza el componente Description de Vaul.
+ * Este componente se encarga de renderizar la descripción o información adicional del Drawer, aplicando estilos personalizados y pasando las props necesarias.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function DrawerDescription({
                                className,
                                ...props

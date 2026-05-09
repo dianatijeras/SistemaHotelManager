@@ -5,6 +5,14 @@ import * as HoverCardPrimitive from "@radix-ui/react-hover-card";
 
 import { cn } from "./utils";
 
+/**
+ * HoverCard es un componente de interfaz de usuario que muestra información adicional cuando el usuario pasa el cursor sobre un elemento.
+ * Utiliza la biblioteca Radix UI para su funcionalidad y estilo.
+ * El componente se compone de tres partes principales: HoverCard, HoverCardTrigger y HoverCardContent. HoverCard es el contenedor principal, HoverCardTrigger es el elemento que activa la aparición del contenido al pasar el cursor, y HoverCardContent es el contenido que se muestra cuando se activa el trigger.
+ * El componente también utiliza la función cn para combinar clases CSS de manera eficiente.
+ * @param props
+ * @constructor
+ */
 function HoverCard({
                        ...props
                    }: React.ComponentProps<typeof HoverCardPrimitive.Root>) {

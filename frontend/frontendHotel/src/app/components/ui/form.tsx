@@ -73,6 +73,13 @@ const FormItemContext = React.createContext<FormItemContextValue>(
     {} as FormItemContextValue,
 );
 
+/**
+ * FormItem es un componente que se utiliza para envolver cada campo del formulario.
+ * Proporciona un contexto para el campo, lo que permite que los componentes hijos accedan a la información del campo, como el estado de error y los identificadores para la descripción y el mensaje de error.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function FormItem({ className, ...props }: React.ComponentProps<"div">) {
     const id = React.useId();
 
@@ -87,6 +94,13 @@ function FormItem({ className, ...props }: React.ComponentProps<"div">) {
     );
 }
 
+/**
+ * FormLabel es un componente que se utiliza para renderizar la etiqueta de un campo del formulario.
+ * Utiliza el contexto proporcionado por FormItem para asociar la etiqueta con el campo correspondiente y mostrar el estado de error si es necesario.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function FormLabel({
                        className,
                        ...props
@@ -104,6 +118,12 @@ function FormLabel({
     );
 }
 
+/**
+ * FormControl es un componente que se utiliza para renderizar el control de un campo del formulario, como un input o un select.
+ * Utiliza el contexto proporcionado por FormItem para asociar el control con la etiqueta y la descripción, y para mostrar el estado de error si es necesario.
+ * @param props
+ * @constructor
+ */
 function FormControl({ ...props }: React.ComponentProps<typeof Slot>) {
     const { error, formItemId, formDescriptionId, formMessageId } =
         useFormField();
@@ -123,6 +143,13 @@ function FormControl({ ...props }: React.ComponentProps<typeof Slot>) {
     );
 }
 
+/**
+ * FormDescription es un componente que se utiliza para renderizar la descripción de un campo del formulario.
+ * Utiliza el contexto proporcionado por FormItem para asociar la descripción con el campo correspondiente y mostrar el estado de error si es necesario.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function FormDescription({ className, ...props }: React.ComponentProps<"p">) {
     const { formDescriptionId } = useFormField();
 
@@ -136,6 +163,13 @@ function FormDescription({ className, ...props }: React.ComponentProps<"p">) {
     );
 }
 
+/**
+ * FormMessage es un componente que se utiliza para renderizar el mensaje de error de un campo del formulario.
+ * Utiliza el contexto proporcionado por FormItem para asociar el mensaje de error con el campo correspondiente y mostrar el estado de error si es necesario.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function FormMessage({ className, ...props }: React.ComponentProps<"p">) {
     const { error, formMessageId } = useFormField();
     const body = error ? String(error?.message ?? "") : props.children;

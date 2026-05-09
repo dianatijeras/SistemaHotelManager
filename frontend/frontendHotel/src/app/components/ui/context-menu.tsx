@@ -6,12 +6,25 @@ import { CheckIcon, ChevronRightIcon, CircleIcon } from "lucide-react";
 
 import { cn } from "./utils";
 
+/**
+ * Componenete de menú contextual basado en Radix UI Context Menu.
+ * Proporciona una estructura para crear menús contextuales con soporte para submenús, grupos, elementos de menú, etc.
+ * Cada componente se estiliza utilizando la función `cn` para combinar clases de Tailwind CSS y admite props adicionales para personalización.
+ * @param props
+ * @constructor
+ */
 function ContextMenu({
                          ...props
                      }: React.ComponentProps<typeof ContextMenuPrimitive.Root>) {
     return <ContextMenuPrimitive.Root data-slot="context-menu" {...props} />;
 }
 
+/**
+ * Componente que actúa como el disparador del menú contextual.
+ * Se utiliza para envolver el elemento que activará la aparición del menú contextual al hacer clic derecho o mediante otros eventos de interacción.
+ * @param props
+ * @constructor
+ */
 function ContextMenuTrigger({
                                 ...props
                             }: React.ComponentProps<typeof ContextMenuPrimitive.Trigger>) {
@@ -20,6 +33,12 @@ function ContextMenuTrigger({
     );
 }
 
+/**
+ * Componente que representa un grupo de elementos dentro del menú contextual.
+ * Se utiliza para organizar elementos relacionados dentro del menú, proporcionando una separación visual entre ellos.
+ * @param props
+ * @constructor
+ */
 function ContextMenuGroup({
                               ...props
                           }: React.ComponentProps<typeof ContextMenuPrimitive.Group>) {
@@ -28,6 +47,12 @@ function ContextMenuGroup({
     );
 }
 
+/**
+ * Componente que actúa como un portal para renderizar el contenido del menú contextual en un contenedor separado del DOM.
+ * Esto es útil para evitar problemas de superposición y garantizar que el menú contextual se muestre correctamente en la interfaz de usuario, incluso si el disparador está dentro de un contenedor con estilos específicos.
+ * @param props
+ * @constructor
+ */
 function ContextMenuPortal({
                                ...props
                            }: React.ComponentProps<typeof ContextMenuPrimitive.Portal>) {
@@ -36,12 +61,26 @@ function ContextMenuPortal({
     );
 }
 
+/**
+ * Componente que representa un submenú dentro del menú contextual.
+ * Permite anidar menús contextuales dentro de otros, proporcionando una estructura jerárquica para organizar opciones relacionadas.
+ * El submenú se activa al interactuar con un elemento que tiene un submenú asociado, mostrando opciones adicionales relacionadas con esa opción específica.
+ * @param props
+ * @constructor
+ */
 function ContextMenuSub({
                             ...props
                         }: React.ComponentProps<typeof ContextMenuPrimitive.Sub>) {
     return <ContextMenuPrimitive.Sub data-slot="context-menu-sub" {...props} />;
 }
 
+/**
+ * Componente que representa un grupo de elementos de radio dentro del menú contextual.
+ * Se utiliza para agrupar opciones mutuamente exclusivas, donde solo una opción puede estar seleccionada a la vez.
+ * Al seleccionar una opción dentro del grupo de radio, las demás opciones se deseleccionan automáticamente, lo que garantiza que solo una opción esté activa en ese grupo específico.
+ * @param props
+ * @constructor
+ */
 function ContextMenuRadioGroup({
                                    ...props
                                }: React.ComponentProps<typeof ContextMenuPrimitive.RadioGroup>) {
@@ -53,6 +92,14 @@ function ContextMenuRadioGroup({
     );
 }
 
+/**
+ * Componente que representa un disparador para un submenú dentro del menú contextual.
+ * @param className
+ * @param inset
+ * @param children
+ * @param props
+ * @constructor
+ */
 function ContextMenuSubTrigger({
                                    className,
                                    inset,
@@ -77,6 +124,12 @@ function ContextMenuSubTrigger({
     );
 }
 
+/**
+ * Componente que representa el contenido de un submenú dentro del menú contextual.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function ContextMenuSubContent({
                                    className,
                                    ...props
@@ -93,6 +146,12 @@ function ContextMenuSubContent({
     );
 }
 
+/**
+ * Componente que representa el contenido principal del menú contextual.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function ContextMenuContent({
                                 className,
                                 ...props
@@ -111,6 +170,16 @@ function ContextMenuContent({
     );
 }
 
+/**
+ * Componente que representa un elemento de menú dentro del menú contextual.
+ * Puede tener variantes como "default" o "destructive" para indicar la naturaleza de la acción asociada con ese elemento.
+ * Además, puede tener un estilo de inserción para proporcionar una apariencia visual diferente, como un sangrado adicional para elementos anidados dentro de submenús.
+ * @param className
+ * @param inset
+ * @param variant
+ * @param props
+ * @constructor
+ */
 function ContextMenuItem({
                              className,
                              inset,
@@ -134,6 +203,16 @@ function ContextMenuItem({
     );
 }
 
+/**
+ * Componente que representa un elemento de menú con una casilla de verificación dentro del menú contextual.
+ * Permite a los usuarios seleccionar o deseleccionar opciones dentro del menú, proporcionando una indicación visual clara de si una opción está activa o no.
+ * El componente utiliza un icono de verificación para mostrar el estado seleccionado y se estiliza de manera similar a otros elementos de menú para mantener la coherencia visual.
+ * @param className
+ * @param children
+ * @param checked
+ * @param props
+ * @constructor
+ */
 function ContextMenuCheckboxItem({
                                      className,
                                      children,
@@ -160,6 +239,15 @@ function ContextMenuCheckboxItem({
     );
 }
 
+/**
+ * Componente que representa un elemento de menú con una opción de radio dentro del menú contextual.
+ * Permite a los usuarios seleccionar una opción dentro de un grupo de opciones mutuamente exclusivas, proporcionando una indicación visual clara de cuál opción está seleccionada.
+ * El componente utiliza un icono de círculo para mostrar el estado seleccionado y se estiliza de manera similar a otros elementos de menú para mantener la coherencia visual.
+ * @param className
+ * @param children
+ * @param props
+ * @constructor
+ */
 function ContextMenuRadioItem({
                                   className,
                                   children,
@@ -184,6 +272,15 @@ function ContextMenuRadioItem({
     );
 }
 
+/**
+ * Componente que representa una etiqueta dentro del menú contextual.
+ * Se utiliza para proporcionar información adicional o descripciones dentro del menú, ayudando a los usuarios a comprender mejor las opciones disponibles.
+ * La etiqueta se estiliza de manera distintiva para diferenciarla de los elementos de menú interactivos, y puede tener un estilo de inserción para proporcionar una apariencia visual diferente, como un sangrado adicional para elementos anidados dentro de submenús.
+ * @param className
+ * @param inset
+ * @param props
+ * @constructor
+ */
 function ContextMenuLabel({
                               className,
                               inset,
@@ -204,6 +301,14 @@ function ContextMenuLabel({
     );
 }
 
+/**
+ * Componente que representa un separador dentro del menú contextual.
+ * Se utiliza para dividir visualmente grupos de elementos dentro del menú, proporcionando una separación clara entre diferentes secciones o categorías de opciones.
+ * El separador se estiliza como una línea horizontal para mejorar la legibilidad y organización del menú.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function ContextMenuSeparator({
                                   className,
                                   ...props
@@ -217,6 +322,14 @@ function ContextMenuSeparator({
     );
 }
 
+/**
+ * Componente que representa un atajo de teclado dentro del menú contextual.
+ * Se utiliza para mostrar combinaciones de teclas asociadas con acciones específicas dentro del menú, proporcionando a los usuarios una forma rápida de acceder a esas acciones sin tener que navegar por el menú.
+ * El atajo de teclado se estiliza de manera distintiva para diferenciarlo de otros elementos del menú, y se posiciona generalmente al final del elemento de menú para mejorar la legibilidad.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function ContextMenuShortcut({
                                  className,
                                  ...props

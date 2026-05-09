@@ -6,12 +6,24 @@ import { CheckIcon, ChevronRightIcon, CircleIcon } from "lucide-react";
 
 import { cn } from "./utils";
 
+/**
+ * Componente DropdownMenu que utiliza Radix UI para crear un menú desplegable.
+ * Este componente es altamente personalizable y se compone de varios subcomponentes para construir la estructura del menú, como el trigger, el contenido, los items, etc.
+ * Cada subcomponente acepta props específicos para su funcionalidad y estilo.
+ * @param props
+ * @constructor
+ */
 function DropdownMenu({
                           ...props
                       }: React.ComponentProps<typeof DropdownMenuPrimitive.Root>) {
     return <DropdownMenuPrimitive.Root data-slot="dropdown-menu" {...props} />;
 }
 
+/**
+ * Componente DropdownMenuPortal que se utiliza para renderizar el contenido del menú en un portal, lo que permite que el menú se muestre correctamente incluso si el trigger está dentro de un contenedor con overflow oculto.
+ * @param props
+ * @constructor
+ */
 function DropdownMenuPortal({
                                 ...props
                             }: React.ComponentProps<typeof DropdownMenuPrimitive.Portal>) {
@@ -20,6 +32,11 @@ function DropdownMenuPortal({
     );
 }
 
+/**
+ * Componente DropdownMenuTrigger que se utiliza para activar la apertura del menú desplegable. Este componente puede ser cualquier elemento interactivo, como un botón o un enlace, y acepta props para personalizar su apariencia y comportamiento.
+ * @param props
+ * @constructor
+ */
 function DropdownMenuTrigger({
                                  ...props
                              }: React.ComponentProps<typeof DropdownMenuPrimitive.Trigger>) {
@@ -31,6 +48,15 @@ function DropdownMenuTrigger({
     );
 }
 
+/**
+ * Componente DropdownMenuContent que representa el contenido del menú desplegable.
+ * Este componente se renderiza dentro de un portal para asegurar que se muestre correctamente en la pantalla.
+ * Acepta props para personalizar su apariencia, como el className para estilos personalizados y sideOffset para ajustar la posición del menú con respecto al trigger.
+ * @param className
+ * @param sideOffset
+ * @param props
+ * @constructor
+ */
 function DropdownMenuContent({
                                  className,
                                  sideOffset = 4,
@@ -51,6 +77,12 @@ function DropdownMenuContent({
     );
 }
 
+/**
+ * Componente DropdownMenuGroup que se utiliza para agrupar elementos relacionados dentro del menú desplegable.
+ * Este componente no tiene estilos propios, pero puede ser útil para organizar visualmente los items del menú y aplicar estilos personalizados a través de props.
+ * @param props
+ * @constructor
+ */
 function DropdownMenuGroup({
                                ...props
                            }: React.ComponentProps<typeof DropdownMenuPrimitive.Group>) {
@@ -59,6 +91,16 @@ function DropdownMenuGroup({
     );
 }
 
+/**
+ * Componente DropdownMenuItem que representa un elemento individual dentro del menú desplegable.
+ * Este componente acepta props para personalizar su apariencia y comportamiento, como className para estilos personalizados, inset para agregar un margen a la izquierda y variant para aplicar estilos específicos según el tipo de item (por ejemplo, "destructive" para acciones peligrosas).
+ * Además, se aplican estilos predeterminados para asegurar una apariencia consistente en todo el menú.
+ * @param className
+ * @param inset
+ * @param variant
+ * @param props
+ * @constructor
+ */
 function DropdownMenuItem({
                               className,
                               inset,
@@ -82,6 +124,16 @@ function DropdownMenuItem({
     );
 }
 
+/**
+ * Componente DropdownMenuCheckboxItem que representa un elemento de tipo checkbox dentro del menú desplegable.
+ * Este componente acepta props para personalizar su apariencia y comportamiento, como className para estilos personalizados y checked para indicar si el checkbox está marcado o no.
+ * Además, se aplican estilos predeterminados para asegurar una apariencia consistente, incluyendo la visualización de un icono de check cuando el checkbox está marcado.
+ * @param className
+ * @param children
+ * @param checked
+ * @param props
+ * @constructor
+ */
 function DropdownMenuCheckboxItem({
                                       className,
                                       children,
@@ -108,6 +160,13 @@ function DropdownMenuCheckboxItem({
     );
 }
 
+/**
+ * Componente DropdownMenuRadioGroup que se utiliza para agrupar elementos de tipo radio dentro del menú desplegable.
+ * Este componente no tiene estilos propios, pero es esencial para organizar los radio items y asegurar que solo uno de ellos pueda estar seleccionado a la vez.
+ * Acepta props específicos para su funcionalidad, como value para indicar el valor del radio seleccionado y onValueChange para manejar los cambios en la selección.
+ * @param props
+ * @constructor
+ */
 function DropdownMenuRadioGroup({
                                     ...props
                                 }: React.ComponentProps<typeof DropdownMenuPrimitive.RadioGroup>) {
@@ -119,6 +178,15 @@ function DropdownMenuRadioGroup({
     );
 }
 
+/**
+ * Componente DropdownMenuRadioItem que representa un elemento de tipo radio dentro del menú desplegable.
+ * Este componente acepta props para personalizar su apariencia y comportamiento, como className para estilos personalizados.
+ * Además, se aplican estilos predeterminados para asegurar una apariencia consistente, incluyendo la visualización de un icono de círculo cuando el radio está seleccionado.
+ * @param className
+ * @param children
+ * @param props
+ * @constructor
+ */
 function DropdownMenuRadioItem({
                                    className,
                                    children,
@@ -143,6 +211,15 @@ function DropdownMenuRadioItem({
     );
 }
 
+/**
+ * Componente DropdownMenuLabel que se utiliza para mostrar un título o etiqueta dentro del menú desplegable.
+ * Este componente acepta props para personalizar su apariencia, como className para estilos personalizados e inset para agregar un margen a la izquierda.
+ * Además, se aplican estilos predeterminados para asegurar una apariencia consistente, como un tamaño de fuente más pequeño y un peso de fuente medio.
+ * @param className
+ * @param inset
+ * @param props
+ * @constructor
+ */
 function DropdownMenuLabel({
                                className,
                                inset,
@@ -163,6 +240,14 @@ function DropdownMenuLabel({
     );
 }
 
+/**
+ * Componente DropdownMenuSeparator que se utiliza para agregar una línea divisoria entre los elementos del menú desplegable, ayudando a organizar visualmente los items en grupos.
+ * Este componente acepta props para personalizar su apariencia, como className para estilos personalizados.
+ * Además, se aplican estilos predeterminados para asegurar una apariencia consistente, como un fondo de color de borde y un tamaño de altura de 1 píxel.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function DropdownMenuSeparator({
                                    className,
                                    ...props
@@ -176,6 +261,14 @@ function DropdownMenuSeparator({
     );
 }
 
+/**
+ * Componente DropdownMenuShortcut que se utiliza para mostrar un atajo de teclado asociado a un elemento del menú desplegable, proporcionando una indicación visual de la combinación de teclas que se puede usar para activar esa acción.
+ * Este componente acepta props para personalizar su apariencia, como className para estilos personalizados.
+ * Además, se aplican estilos predeterminados para asegurar una apariencia consistente, como un color de texto atenuado, un tamaño de fuente más pequeño y un espaciado a la izquierda automático para alinear el atajo a la derecha del item.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function DropdownMenuShortcut({
                                   className,
                                   ...props
@@ -192,12 +285,30 @@ function DropdownMenuShortcut({
     );
 }
 
+/**
+ * Componente DropdownMenuSub que se utiliza para crear un submenú dentro del menú desplegable principal, permitiendo organizar las opciones en niveles jerárquicos y mejorar la navegación dentro del menú.
+ * Este componente acepta props para personalizar su apariencia y comportamiento, como className para estilos personalizados.
+ * Además, se aplican estilos predeterminados para asegurar una apariencia consistente, como un fondo de color de popover, un borde redondeado y una sombra para destacar el submenú.
+ * @param props
+ * @constructor
+ */
 function DropdownMenuSub({
                              ...props
                          }: React.ComponentProps<typeof DropdownMenuPrimitive.Sub>) {
     return <DropdownMenuPrimitive.Sub data-slot="dropdown-menu-sub" {...props} />;
 }
 
+/**
+ * Componente DropdownMenuSubTrigger que se utiliza para activar la apertura de un submenú dentro del menú desplegable principal.
+ * Este componente se muestra como un elemento del menú principal y, al hacer clic en él, se despliega el submenú asociado.
+ * Acepta props para personalizar su apariencia y comportamiento, como className para estilos personalizados e inset para agregar un margen a la izquierda, lo que ayuda a diferenciar visualmente el trigger del submenú de los demás items del menú principal.
+ * Además, se aplican estilos predeterminados para asegurar una apariencia consistente, como un fondo de acento y un color de texto específico cuando el submenú está abierto o cuando el trigger está enfocado.
+ * @param className
+ * @param inset
+ * @param children
+ * @param props
+ * @constructor
+ */
 function DropdownMenuSubTrigger({
                                     className,
                                     inset,
@@ -222,6 +333,14 @@ function DropdownMenuSubTrigger({
     );
 }
 
+/**
+ * Componente DropdownMenuSubContent que representa el contenido del submenú dentro del menú desplegable principal.
+ * Este componente se renderiza cuando se activa el trigger del submenú y muestra las opciones relacionadas con esa sección específica del menú.
+ * Acepta props para personalizar su apariencia, como className para estilos personalizados, y se aplican estilos predeterminados para asegurar una apariencia consistente, como un fondo de color de popover, un borde redondeado y una sombra para destacar el submenú.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function DropdownMenuSubContent({
                                     className,
                                     ...props

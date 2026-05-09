@@ -8,6 +8,12 @@ import {
 import { cn } from "./utils";
 import { Button, buttonVariants } from "./button";
 
+/**
+ * Pagination es un componente de navegación que permite a los usuarios desplazarse por una lista de páginas o elementos paginados.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function Pagination({ className, ...props }: React.ComponentProps<"nav">) {
   return (
     <nav
@@ -20,6 +26,12 @@ function Pagination({ className, ...props }: React.ComponentProps<"nav">) {
   );
 }
 
+/**
+ * PaginationContent es un contenedor para los elementos de paginación, como los enlaces a las páginas, los botones de navegación y las elipsis.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function PaginationContent({
   className,
   ...props
@@ -33,6 +45,11 @@ function PaginationContent({
   );
 }
 
+/**
+ * PaginationItem representa un elemento individual dentro de la paginación, como un enlace a una página específica o un botón de navegación.
+ * @param props
+ * @constructor
+ */
 function PaginationItem({ ...props }: React.ComponentProps<"li">) {
   return <li data-slot="pagination-item" {...props} />;
 }
@@ -42,6 +59,15 @@ type PaginationLinkProps = {
 } & Pick<React.ComponentProps<typeof Button>, "size"> &
   React.ComponentProps<"a">;
 
+/**
+ * PaginationLink es un enlace que representa una página específica en la paginación.
+ * Puede tener un estado activo para indicar la página actual.
+ * @param className
+ * @param isActive
+ * @param size
+ * @param props
+ * @constructor
+ */
 function PaginationLink({
   className,
   isActive,
@@ -65,6 +91,12 @@ function PaginationLink({
   );
 }
 
+/**
+ * PaginationPrevious es un botón que permite a los usuarios navegar a la página anterior en la paginación.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function PaginationPrevious({
   className,
   ...props
@@ -82,6 +114,12 @@ function PaginationPrevious({
   );
 }
 
+/**
+ * PaginationNext es un botón que permite a los usuarios navegar a la página siguiente en la paginación.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function PaginationNext({
   className,
   ...props
@@ -99,6 +137,12 @@ function PaginationNext({
   );
 }
 
+/**
+ * PaginationEllipsis es un elemento que se utiliza para indicar que hay más páginas disponibles en la paginación, pero no se muestran todas las páginas en la interfaz de usuario.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function PaginationEllipsis({
   className,
   ...props

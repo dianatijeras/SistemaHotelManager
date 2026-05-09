@@ -13,6 +13,13 @@ import {
     DialogTitle,
 } from "./dialog";
 
+/**
+ * Componente comando que se utiliza para crear una paleta de comandos.
+ * Se puede utilizar dentro de un diálogo para mostrar la paleta de comandos.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function Command({
                      className,
                      ...props
@@ -29,6 +36,14 @@ function Command({
     );
 }
 
+/**
+ * Componente de diálogo que se utiliza para mostrar la paleta de comandos.
+ * @param title
+ * @param description
+ * @param children
+ * @param props
+ * @constructor
+ */
 function CommandDialog({
                            title = "Command Palette",
                            description = "Search for a command to run...",
@@ -53,6 +68,12 @@ function CommandDialog({
     );
 }
 
+/**
+ * Componente de entrada que se utiliza para escribir el comando que se desea ejecutar.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function CommandInput({
                           className,
                           ...props
@@ -75,6 +96,12 @@ function CommandInput({
     );
 }
 
+/**
+ * Componente de lista que se utiliza para mostrar los comandos disponibles.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function CommandList({
                          className,
                          ...props
@@ -91,6 +118,11 @@ function CommandList({
     );
 }
 
+/**
+ * Componente que se muestra cuando no hay comandos disponibles.
+ * @param props
+ * @constructor
+ */
 function CommandEmpty({
                           ...props
                       }: React.ComponentProps<typeof CommandPrimitive.Empty>) {
@@ -103,6 +135,12 @@ function CommandEmpty({
     );
 }
 
+/**
+ * Componente de grupo que se utiliza para agrupar los comandos disponibles.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function CommandGroup({
                           className,
                           ...props
@@ -119,6 +157,12 @@ function CommandGroup({
     );
 }
 
+/**
+ * Componente de separador que se utiliza para separar los comandos disponibles.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function CommandSeparator({
                               className,
                               ...props
@@ -132,6 +176,12 @@ function CommandSeparator({
     );
 }
 
+/**
+ * Componente de ítem que se utiliza para mostrar un comando disponible.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function CommandItem({
                          className,
                          ...props
@@ -148,6 +198,12 @@ function CommandItem({
     );
 }
 
+/**
+ * Componente de atajo que se utiliza para mostrar el atajo de teclado de un comando disponible.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function CommandShortcut({
                              className,
                              ...props

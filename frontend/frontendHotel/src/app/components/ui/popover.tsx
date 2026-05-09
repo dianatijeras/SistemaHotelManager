@@ -5,6 +5,12 @@ import * as PopoverPrimitive from "@radix-ui/react-popover";
 
 import { cn } from "./utils";
 
+/**
+ * Popover es un componente de interfaz de usuario que muestra contenido adicional en una ventana emergente cuando el usuario interactúa con un elemento específico.
+ * Es útil para mostrar información contextual, opciones adicionales o acciones relacionadas sin ocupar espacio permanente en la interfaz.
+ * @param props
+ * @constructor
+ */
 function Popover({
   ...props
 }: React.ComponentProps<typeof PopoverPrimitive.Root>) {
@@ -17,6 +23,16 @@ function PopoverTrigger({
   return <PopoverPrimitive.Trigger data-slot="popover-trigger" {...props} />;
 }
 
+/**
+ * PopoverContent es el componente que representa el contenido que se muestra dentro del Popover.
+ * Este componente se renderiza dentro de un Portal, lo que significa que se monta en un nodo separado del DOM para evitar problemas de superposición y posicionamiento.
+ * El contenido del Popover se puede alinear y posicionar utilizando las propiedades align y sideOffset, respectivamente.
+ * @param className
+ * @param align
+ * @param sideOffset
+ * @param props
+ * @constructor
+ */
 function PopoverContent({
   className,
   align = "center",
@@ -39,6 +55,13 @@ function PopoverContent({
   );
 }
 
+/**
+ * PopoverAnchor es un componente que se utiliza para anclar el Popover a un elemento específico en la interfaz de usuario.
+ * Este componente se utiliza para definir el punto de referencia desde el cual se posicionará el Popover.
+ * Al usar PopoverAnchor, el Popover se posicionará en relación con el elemento al que está anclado, lo que permite una experiencia de usuario más intuitiva y contextual.
+ * @param props
+ * @constructor
+ */
 function PopoverAnchor({
   ...props
 }: React.ComponentProps<typeof PopoverPrimitive.Anchor>) {

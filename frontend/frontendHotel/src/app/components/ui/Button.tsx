@@ -10,6 +10,17 @@ interface ButtonProps {
     className?: string;
 }
 
+/**
+ * Componente de botón reutilizable con variantes de estilo y tamaños.
+ * @param children
+ * @param onClick
+ * @param type
+ * @param variant
+ * @param size
+ * @param disabled
+ * @param className
+ * @constructor
+ */
 export function Button({
                            children,
                            onClick,

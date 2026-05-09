@@ -32,6 +32,11 @@ type CarouselContextProps = {
 
 const CarouselContext = React.createContext<CarouselContextProps | null>(null);
 
+/**
+ * Enganche para acceder al contexto del carrusel. Asegúrate de usarlo dentro de un componente <Carousel />.
+ * @returns El contexto del carrusel, que incluye referencias, API y funciones de navegación.
+ * @throws Error si se usa fuera de un componente <Carousel />.
+ */
 function useCarousel() {
     const context = React.useContext(CarouselContext);
 
@@ -42,6 +47,18 @@ function useCarousel() {
     return context;
 }
 
+/**
+ * Componente principal del carrusel que configura el contexto y maneja la lógica de navegación.
+ * Acepta opciones de configuración, plugins y una función para establecer la API del carrusel.
+ * @param orientation
+ * @param opts
+ * @param setApi
+ * @param plugins
+ * @param className
+ * @param children
+ * @param props
+ * @constructor
+ */
 function Carousel({
                       orientation = "horizontal",
                       opts,
@@ -132,6 +149,13 @@ function Carousel({
     );
 }
 
+/**
+ * Componente que representa el contenedor del carrusel.
+ * Utiliza la referencia del carrusel para habilitar el desplazamiento y aplica estilos de desbordamiento.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function CarouselContent({ className, ...props }: React.ComponentProps<"div">) {
     const { carouselRef, orientation } = useCarousel();
 
@@ -153,6 +177,13 @@ function CarouselContent({ className, ...props }: React.ComponentProps<"div">) {
     );
 }
 
+/**
+ * Componente que representa un elemento individual dentro del carrusel.
+ * Aplica estilos para el tamaño y el espaciado, y utiliza el contexto para ajustar el diseño según la orientación del carrusel.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function CarouselItem({ className, ...props }: React.ComponentProps<"div">) {
     const { orientation } = useCarousel();
 
@@ -171,6 +202,15 @@ function CarouselItem({ className, ...props }: React.ComponentProps<"div">) {
     );
 }
 
+/**
+ * Componente para el botón de navegación "Anterior" del carrusel.
+ * Utiliza el contexto para determinar la orientación del carrusel, habilitar/deshabilitar el botón según la capacidad de desplazamiento y manejar el evento de clic para desplazarse hacia atrás.
+ * @param className
+ * @param variant
+ * @param size
+ * @param props
+ * @constructor
+ */
 function CarouselPrevious({
                               className,
                               variant = "outline",
@@ -201,6 +241,15 @@ function CarouselPrevious({
     );
 }
 
+/**
+ * Componente para el botón de navegación "Siguiente" del carrusel.
+ * Utiliza el contexto para determinar la orientación del carrusel, habilitar/deshabilitar el botón según la capacidad de desplazamiento y manejar el evento de clic para desplazarse hacia adelante.
+ * @param className
+ * @param variant
+ * @param size
+ * @param props
+ * @constructor
+ */
 function CarouselNext({
                           className,
                           variant = "outline",

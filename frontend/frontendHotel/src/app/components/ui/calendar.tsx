@@ -7,6 +7,17 @@ import { DayPicker } from "react-day-picker";
 import { cn } from "./utils";
 import { buttonVariants } from "./button";
 
+/**
+ * El componente `Calendar` es una envoltura personalizada alrededor del componente `DayPicker` de la biblioteca `react-day-picker`.
+ * Proporciona estilos personalizados y opciones de configuración para mostrar un calendario con días seleccionables.
+ * El componente acepta varias props, incluyendo `className`, `classNames`, `showOutsideDays`, y otras props que se pasan directamente al componente `DayPicker`.
+ * Además, personaliza los íconos de navegación utilizando los componentes `ChevronLeft` y `ChevronRight` de la biblioteca `lucide-react`.
+ * @param className
+ * @param classNames
+ * @param showOutsideDays
+ * @param props
+ * @constructor
+ */
 function Calendar({
                       className,
                       classNames,

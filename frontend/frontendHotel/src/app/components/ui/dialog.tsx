@@ -6,30 +6,60 @@ import { XIcon } from "lucide-react";
 
 import { cn } from "./utils";
 
+/**
+ * Componentes de diálogo basados en Radix UI.
+ * Estos componentes proporcionan una estructura y estilos predefinidos para crear diálogos modales en la aplicación.
+ * Se pueden personalizar mediante props y clases CSS.
+ * @param props
+ * @constructor
+ */
 function Dialog({
                     ...props
                 }: React.ComponentProps<typeof DialogPrimitive.Root>) {
     return <DialogPrimitive.Root data-slot="dialog" {...props} />;
 }
 
+/**
+ * Componente que actúa como disparador para abrir el diálogo.
+ * Se puede usar cualquier elemento como trigger, y al hacer clic en él, se abrirá el diálogo asociado.
+ * @param props
+ * @constructor
+ */
 function DialogTrigger({
                            ...props
                        }: React.ComponentProps<typeof DialogPrimitive.Trigger>) {
     return <DialogPrimitive.Trigger data-slot="dialog-trigger" {...props} />;
 }
 
+/**
+ * Componente que se encarga de renderizar el contenido del diálogo en un portal, lo que permite que el diálogo se muestre por encima de otros elementos en la página.
+ * @param props
+ * @constructor
+ */
 function DialogPortal({
                           ...props
                       }: React.ComponentProps<typeof DialogPrimitive.Portal>) {
     return <DialogPrimitive.Portal data-slot="dialog-portal" {...props} />;
 }
 
+/**
+ * Componente que representa el botón de cierre del diálogo.
+ * Al hacer clic en este botón, el diálogo se cerrará automáticamente.
+ * @param props
+ * @constructor
+ */
 function DialogClose({
                          ...props
                      }: React.ComponentProps<typeof DialogPrimitive.Close>) {
     return <DialogPrimitive.Close data-slot="dialog-close" {...props} />;
 }
 
+/**
+ * Componente que representa la superposición del diálogo, que se muestra detrás del contenido del diálogo para oscurecer el fondo y enfocar la atención en el diálogo.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function DialogOverlay({
                            className,
                            ...props
@@ -46,6 +76,14 @@ function DialogOverlay({
     );
 }
 
+/**
+ * Componente que representa el contenido principal del diálogo.
+ * Este componente se renderiza dentro del portal y contiene el contenido que se desea mostrar en el diálogo, así como un botón de cierre para cerrar el diálogo.
+ * @param className
+ * @param children
+ * @param props
+ * @constructor
+ */
 function DialogContent({
                            className,
                            children,
@@ -72,6 +110,12 @@ function DialogContent({
     );
 }
 
+/**
+ * Componente que representa el encabezado del diálogo, que generalmente contiene el título y la descripción del diálogo.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function DialogHeader({ className, ...props }: React.ComponentProps<"div">) {
     return (
         <div
@@ -82,6 +126,12 @@ function DialogHeader({ className, ...props }: React.ComponentProps<"div">) {
     );
 }
 
+/**
+ * Componente que representa el pie de página del diálogo, que generalmente contiene los botones de acción para cerrar el diálogo o realizar otras acciones relacionadas con el diálogo.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function DialogFooter({ className, ...props }: React.ComponentProps<"div">) {
     return (
         <div
@@ -95,6 +145,12 @@ function DialogFooter({ className, ...props }: React.ComponentProps<"div">) {
     );
 }
 
+/**
+ * Componente que representa el título del diálogo, que generalmente se muestra en el encabezado del diálogo y proporciona una breve descripción del propósito del diálogo.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function DialogTitle({
                          className,
                          ...props
@@ -108,6 +164,12 @@ function DialogTitle({
     );
 }
 
+/**
+ * Componente que representa la descripción del diálogo, que generalmente se muestra debajo del título en el encabezado del diálogo y proporciona información adicional sobre el propósito o contenido del diálogo.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function DialogDescription({
                                className,
                                ...props

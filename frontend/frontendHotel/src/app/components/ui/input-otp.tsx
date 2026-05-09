@@ -6,6 +6,16 @@ import { MinusIcon } from "lucide-react";
 
 import { cn } from "./utils";
 
+/**
+ * InputOTP es un componente de entrada de código OTP (One-Time Password) que utiliza la biblioteca "input-otp".
+ * Permite a los usuarios ingresar códigos OTP de manera fácil y estilizada.
+ * El componente se compone de varios subcomponentes, como InputOTPGroup, InputOTPSlot e InputOTPSeparator, que se utilizan para organizar y mostrar los campos de entrada de OTP.
+ * El componente también maneja el estado de los campos de entrada, como el carácter ingresado, si el campo está activo y si tiene un cursor falso para indicar la posición actual del usuario.
+ * @param className
+ * @param containerClassName
+ * @param props
+ * @constructor
+ */
 function InputOTP({
                       className,
                       containerClassName,
@@ -26,6 +36,13 @@ function InputOTP({
     );
 }
 
+/**
+ * InputOTPGroup es un componente que se utiliza para agrupar los campos de entrada de OTP.
+ * Proporciona un contenedor flexible para organizar los campos de entrada de OTP y aplicar estilos comunes a todos ellos.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function InputOTPGroup({ className, ...props }: React.ComponentProps<"div">) {
     return (
         <div
@@ -36,6 +53,15 @@ function InputOTPGroup({ className, ...props }: React.ComponentProps<"div">) {
     );
 }
 
+/**
+ * InputOTPSlot es un componente que representa un campo de entrada individual para el código OTP.
+ * Cada slot muestra el carácter ingresado por el usuario, si el campo está activo y si tiene un cursor falso para indicar la posición actual del usuario.
+ * El componente utiliza el contexto de OTPInput para obtener la información relevante sobre el estado del campo de entrada.
+ * @param index
+ * @param className
+ * @param props
+ * @constructor
+ */
 function InputOTPSlot({
                           index,
                           className,
@@ -66,6 +92,12 @@ function InputOTPSlot({
     );
 }
 
+/**
+ * InputOTPSeparator es un componente que se utiliza para mostrar un separador entre los campos de entrada de OTP.
+ * En este caso, se utiliza un ícono de guion (MinusIcon) para indicar visualmente la separación entre los campos de entrada de OTP.
+ * @param props
+ * @constructor
+ */
 function InputOTPSeparator({ ...props }: React.ComponentProps<"div">) {
     return (
         <div data-slot="input-otp-separator" role="separator" {...props}>

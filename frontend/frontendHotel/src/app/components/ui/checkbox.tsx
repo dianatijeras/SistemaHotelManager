@@ -6,6 +6,12 @@ import { CheckIcon } from "lucide-react";
 
 import { cn } from "./utils";
 
+/**
+ * Componente checkbox personalizado utilizando Radix UI. Permite seleccionar o deseleccionar una opción.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function Checkbox({
                       className,
                       ...props

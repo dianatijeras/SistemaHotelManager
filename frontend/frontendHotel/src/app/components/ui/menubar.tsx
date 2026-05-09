@@ -6,6 +6,13 @@ import { CheckIcon, ChevronRightIcon, CircleIcon } from "lucide-react";
 
 import { cn } from "./utils";
 
+/**
+ * Menubar es un componente de navegación que se muestra en la parte superior de la aplicación.
+ * Permite a los usuarios acceder a diferentes secciones o funcionalidades de la aplicación a través de menús desplegables.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function Menubar({
                      className,
                      ...props
@@ -22,24 +29,44 @@ function Menubar({
     );
 }
 
+/**
+ * MenubarMenu es un componente que representa un menú desplegable dentro del Menubar.
+ * @param props
+ * @constructor
+ */
 function MenubarMenu({
                          ...props
                      }: React.ComponentProps<typeof MenubarPrimitive.Menu>) {
     return <MenubarPrimitive.Menu data-slot="menubar-menu" {...props} />;
 }
 
+/**
+ * MenubarGroup es un componente que se utiliza para agrupar elementos dentro de un MenubarMenu.
+ * @param props
+ * @constructor
+ */
 function MenubarGroup({
                           ...props
                       }: React.ComponentProps<typeof MenubarPrimitive.Group>) {
     return <MenubarPrimitive.Group data-slot="menubar-group" {...props} />;
 }
 
+/**
+ * MenubarPortal es un componente que se utiliza para renderizar el contenido del menú en un portal, lo que permite que el menú se muestre por encima de otros elementos de la interfaz de usuario.
+ * @param props
+ * @constructor
+ */
 function MenubarPortal({
                            ...props
                        }: React.ComponentProps<typeof MenubarPrimitive.Portal>) {
     return <MenubarPrimitive.Portal data-slot="menubar-portal" {...props} />;
 }
 
+/**
+ * MenubarRadioGroup es un componente que se utiliza para agrupar elementos de tipo radio dentro de un MenubarMenu, lo que permite que solo se pueda seleccionar una opción dentro del grupo.
+ * @param props
+ * @constructor
+ */
 function MenubarRadioGroup({
                                ...props
                            }: React.ComponentProps<typeof MenubarPrimitive.RadioGroup>) {
@@ -48,6 +75,13 @@ function MenubarRadioGroup({
     );
 }
 
+/**
+ * MenubarTrigger es un componente que se utiliza para activar el menú desplegable cuando se hace clic en él.
+ * Generalmente se muestra como un botón o un enlace dentro del Menubar.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function MenubarTrigger({
                             className,
                             ...props
@@ -64,6 +98,16 @@ function MenubarTrigger({
     );
 }
 
+/**
+ * MenubarContent es un componente que representa el contenido del menú desplegable.
+ * Se muestra cuando se activa el MenubarTrigger y contiene los elementos del menú
+ * @param className
+ * @param align
+ * @param alignOffset
+ * @param sideOffset
+ * @param props
+ * @constructor
+ */
 function MenubarContent({
                             className,
                             align = "start",
@@ -88,6 +132,15 @@ function MenubarContent({
     );
 }
 
+/**
+ * MenubarItem es un componente que representa un elemento individual dentro del menú desplegable.
+ * Puede ser un enlace, un botón o cualquier otro tipo de elemento interactivo que el usuario pueda seleccionar.
+ * @param className
+ * @param inset
+ * @param variant
+ * @param props
+ * @constructor
+ */
 function MenubarItem({
                          className,
                          inset,
@@ -111,6 +164,14 @@ function MenubarItem({
     );
 }
 
+/**
+ * MenubarCheckboxItem es un componente que representa un elemento de tipo checkbox dentro del menú desplegable.
+ * @param className
+ * @param children
+ * @param checked
+ * @param props
+ * @constructor
+ */
 function MenubarCheckboxItem({
                                  className,
                                  children,
@@ -137,6 +198,14 @@ function MenubarCheckboxItem({
     );
 }
 
+/**
+ * MenubarRadioItem es un componente que representa un elemento de tipo radio dentro del menú desplegable.
+ * Permite a los usuarios seleccionar una opción de un conjunto de opciones mutuamente exclusivas.
+ * @param className
+ * @param children
+ * @param props
+ * @constructor
+ */
 function MenubarRadioItem({
                               className,
                               children,
@@ -161,6 +230,14 @@ function MenubarRadioItem({
     );
 }
 
+/**
+ * MenubarLabel es un componente que se utiliza para mostrar un título o una etiqueta dentro del menú desplegable.
+ * Se utiliza para organizar y categorizar los elementos del menú, proporcionando una mejor experiencia de usuario al facilitar la navegación y comprensión de las opciones disponibles.
+ * @param className
+ * @param inset
+ * @param props
+ * @constructor
+ */
 function MenubarLabel({
                           className,
                           inset,
@@ -181,6 +258,13 @@ function MenubarLabel({
     );
 }
 
+/**
+ * MenubarSeparator es un componente que se utiliza para separar visualmente los elementos dentro del menú desplegable.
+ * Proporciona una división clara entre diferentes secciones o grupos de opciones, mejorando la organización y legibilidad del menú.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function MenubarSeparator({
                               className,
                               ...props
@@ -194,6 +278,13 @@ function MenubarSeparator({
     );
 }
 
+/**
+ * MenubarShortcut es un componente que se utiliza para mostrar atajos de teclado asociados a las opciones del menú desplegable.
+ * Proporciona a los usuarios una forma rápida de acceder a las funciones del menú utilizando combinaciones de teclas, mejorando la eficiencia y la experiencia de usuario.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function MenubarShortcut({
                              className,
                              ...props
@@ -210,12 +301,27 @@ function MenubarShortcut({
     );
 }
 
+/**
+ * MenubarSub es un componente que representa un submenú dentro del menú desplegable.
+ * Permite a los usuarios acceder a opciones adicionales relacionadas con una opción principal, proporcionando una estructura jerárquica y organizada para las opciones del menú.
+ * @param props
+ * @constructor
+ */
 function MenubarSub({
                         ...props
                     }: React.ComponentProps<typeof MenubarPrimitive.Sub>) {
     return <MenubarPrimitive.Sub data-slot="menubar-sub" {...props} />;
 }
 
+/**
+ * MenubarSubTrigger es un componente que se utiliza para activar un submenú dentro del menú desplegable.
+ * Se muestra como una opción dentro del menú principal y, al hacer clic en ella, se despliega un submenú con opciones adicionales relacionadas con la opción principal.
+ * @param className
+ * @param inset
+ * @param children
+ * @param props
+ * @constructor
+ */
 function MenubarSubTrigger({
                                className,
                                inset,
@@ -240,6 +346,13 @@ function MenubarSubTrigger({
     );
 }
 
+/**
+ * MenubarSubContent es un componente que representa el contenido de un submenú dentro del menú desplegable.
+ * Se muestra cuando se activa un MenubarSubTrigger y contiene las opciones adicionales relacionadas con la opción principal del menú.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function MenubarSubContent({
                                className,
                                ...props

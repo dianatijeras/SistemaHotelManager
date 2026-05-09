@@ -51,7 +51,14 @@ function BreadcrumbItem({ className, ...props }: React.ComponentProps<"li">) {
     );
 }
 
-
+/**
+ * BreadcrumbLink es un componente que representa un enlace dentro del breadcrumb.
+ * Se utiliza para navegar a una página anterior en la jerarquía del breadcrumb.
+ * @param asChild
+ * @param className
+ * @param props
+ * @constructor
+ */
 function BreadcrumbLink({
                             asChild,
                             className,
@@ -70,6 +77,13 @@ function BreadcrumbLink({
     );
 }
 
+/**
+ * BreadcrumbPage es un componente que representa la página actual dentro del breadcrumb.
+ * Se utiliza para indicar la ubicación actual del usuario dentro de la jerarquía del breadcrumb.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function BreadcrumbPage({ className, ...props }: React.ComponentProps<"span">) {
     return (
         <span
@@ -83,6 +97,14 @@ function BreadcrumbPage({ className, ...props }: React.ComponentProps<"span">) {
     );
 }
 
+/**
+ * BreadcrumbSeparator es un componente que representa el separador entre los elementos del breadcrumb.
+ * Se utiliza para separar visualmente los elementos del breadcrumb, como los enlaces y la página actual.
+ * @param children
+ * @param className
+ * @param props
+ * @constructor
+ */
 function BreadcrumbSeparator({
                                  children,
                                  className,
@@ -101,6 +123,13 @@ function BreadcrumbSeparator({
     );
 }
 
+/**
+ * BreadcrumbEllipsis es un componente que representa una elipsis dentro del breadcrumb.
+ * Se utiliza para indicar que hay más elementos en la jerarquía del breadcrumb que no se muestran.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function BreadcrumbEllipsis({
                                 className,
                                 ...props

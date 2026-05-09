@@ -24,6 +24,10 @@ type ChartContextProps = {
 
 const ChartContext = React.createContext<ChartContextProps | null>(null);
 
+/**
+ * Enganche para acceder a la configuración del gráfico desde componentes hijos como `ChartTooltipContent` o `ChartLegendContent`.
+ * Lanza un error si se usa fuera de un `ChartContainer`.
+ */
 function useChart() {
     const context = React.useContext(ChartContext);
 
@@ -34,6 +38,16 @@ function useChart() {
     return context;
 }
 
+/**
+ * Componente contenedor para gráficos que proporciona un contexto con la configuración del gráfico y aplica estilos globales a los elementos de Recharts.
+ * Acepta una prop `config` que define etiquetas, íconos y colores para diferentes claves de datos, que luego pueden ser utilizados por componentes como `ChartTooltipContent` para mostrar información personalizada.
+ * @param id
+ * @param className
+ * @param children
+ * @param config
+ * @param props
+ * @constructor
+ */
 function ChartContainer({
                             id,
                             className,
@@ -104,6 +118,24 @@ ${colorConfig
 
 const ChartTooltip = RechartsPrimitive.Tooltip;
 
+/**
+ * Componente personalizado para el contenido del tooltip de Recharts que utiliza la configuración proporcionada por `ChartContainer` para mostrar etiquetas, íconos e indicadores personalizados.
+ * Acepta props adicionales para controlar la apariencia del tooltip, como el tipo de indicador (línea, punto o dashed), y opciones para ocultar la etiqueta o el indicador.
+ * @param active
+ * @param payload
+ * @param className
+ * @param indicator
+ * @param hideLabel
+ * @param hideIndicator
+ * @param label
+ * @param labelFormatter
+ * @param labelClassName
+ * @param formatter
+ * @param color
+ * @param nameKey
+ * @param labelKey
+ * @constructor
+ */
 function ChartTooltipContent({
                                  active,
                                  payload,
@@ -250,6 +282,16 @@ function ChartTooltipContent({
 
 const ChartLegend = RechartsPrimitive.Legend;
 
+/**
+ * Componente personalizado para el contenido de la leyenda de Recharts que utiliza la configuración proporcionada por `ChartContainer` para mostrar etiquetas e íconos personalizados.
+ * Acepta props adicionales para controlar la apariencia de la leyenda, como la opción para ocultar los íconos.
+ * @param className
+ * @param hideIcon
+ * @param payload
+ * @param verticalAlign
+ * @param nameKey
+ * @constructor
+ */
 function ChartLegendContent({
                                 className,
                                 hideIcon = false,
@@ -304,6 +346,12 @@ function ChartLegendContent({
     );
 }
 
+/**
+ * Helper para extraer la configuración de un item a partir de un payload, buscando primero en el payload principal y luego en un posible objeto `payload` anidado, utilizando la clave proporcionada o una clave por defecto basada en `dataKey` o `name`.
+ * @param config
+ * @param payload
+ * @param key
+ */
 // Helper to extract item config from a payload.
 function getPayloadConfigFromPayload(
     config: ChartConfig,
