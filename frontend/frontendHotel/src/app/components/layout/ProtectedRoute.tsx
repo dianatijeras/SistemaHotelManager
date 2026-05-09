@@ -1,3 +1,7 @@
+import { Navigate } from "react-router";
+import { useAuth } from "../../context/AuthContext";
+import { RolUsuario } from "../../types/auth";
+
 interface ProtectedRouteProps {
     children: React.ReactNode;
     rolesPermitidos?: RolUsuario[];

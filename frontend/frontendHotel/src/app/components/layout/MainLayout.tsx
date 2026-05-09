@@ -1,3 +1,20 @@
+import { Outlet, Link, useLocation, useNavigate } from "react-router";
+import {
+    LayoutDashboard,
+    Calendar,
+    Users,
+    DoorOpen,
+    LogIn,
+    LogOut,
+    CreditCard,
+    Hotel,
+    UserCog,
+    ChevronDown
+} from "lucide-react";
+import { useAuth } from "../../context/AuthContext";
+import { RolUsuario } from "../../types/auth";
+import { useState, useEffect, useRef } from "react";
+
 export function MainLayout() {
     const location = useLocation();
     const navigate = useNavigate();
