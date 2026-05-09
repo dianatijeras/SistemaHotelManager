@@ -1,5 +1,7 @@
 package co.edu.uniquindio.sistemahotelmanager.service;
 
+import co.edu.uniquindio.sistemahotelmanager.data.DataStore;
+import co.edu.uniquindio.sistemahotelmanager.dto.HuespedRequestDTO;
 import co.edu.uniquindio.sistemahotelmanager.model.Huesped;
 import org.springframework.stereotype.Service;
 
