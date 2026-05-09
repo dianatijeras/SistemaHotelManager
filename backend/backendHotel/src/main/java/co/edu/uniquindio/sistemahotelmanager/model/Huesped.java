@@ -1,5 +1,10 @@
 package co.edu.uniquindio.sistemahotelmanager.model;
 
+import co.edu.uniquindio.sistemahotelmanager.enums.Rol;
+
+/**
+ * Clase que representa a un huésped del hotel, hereda de Usuario.
+ */
 public class Huesped extends Usuario{
 
     private String idHuesped;
@@ -43,75 +48,86 @@ public class Huesped extends Usuario{
      * @return
      */
     public String getNombreCompleto() {
-        return nombre + " " + apellido; }
+        return nombre + " " + apellido;
+    }
 
     /**
      * Método para obtener el ID del huésped
      * @return
      */
     public String getIdHuesped() {
-        return idHuesped; }
+        return idHuesped;
+    }
 
     /**
      * Método para establecer el ID del huésped
      * @param idHuesped
      */
     public void setIdHuesped(String idHuesped) {
-        this.idHuesped = idHuesped; }
+        this.idHuesped = idHuesped;
+    }
 
     /**
      * Método para obtener el nombre del huésped
      * @return
      */
     public String getNombre() {
-        return nombre; }
+        return nombre;
+    }
 
     /**
      * Método para establecer el nombre del huésped
      * @param nombre
      */
     public void setNombre(String nombre) {
-        this.nombre = nombre; }
+        this.nombre = nombre;
+    }
 
     /**
      * Método para obtener el apellido del huésped
      * @return
      */
     public String getApellido() {
-        return apellido; }
+        return apellido;
+    }
 
     /**
      * Método para establecer el apellido del huésped
      * @param apellido
      */
     public void setApellido(String apellido) {
-        this.apellido = apellido; }
+        this.apellido = apellido;
+    }
 
     /**
      * Método para obtener el teléfono del huésped
      * @return
      */
     public String getTelefono() {
-        return telefono; }
+        return telefono;
+    }
 
     /**
      * Método para establecer el teléfono del huésped
      * @param telefono
      */
     public void setTelefono(String telefono) {
-        this.telefono = telefono; }
+        this.telefono = telefono;
+    }
 
     /**
      * Método para obtener el correo del huésped
      * @return
      */
     public String getCorreo() {
-        return correo; }
+        return correo;
+    }
 
     /**
      *  Método para establecer el correo del huésped
      * @param correo
      */
     public void setCorreo(String correo) {
-        this.correo = correo; }
+        this.correo = correo;
+    }
 }

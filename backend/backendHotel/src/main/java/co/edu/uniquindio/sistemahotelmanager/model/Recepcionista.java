@@ -1,5 +1,11 @@
 package co.edu.uniquindio.sistemahotelmanager.model;
 
+import co.edu.uniquindio.sistemahotelmanager.enums.Rol;
+import co.edu.uniquindio.sistemahotelmanager.enums.TurnoRecepcionista;
+
+/**
+ * Clase que representa a un recepcionista del hotel, hereda de Usuario.
+ */
 public class Recepcionista  extends Usuario{
 
     private String idRecepcionista;
@@ -30,61 +36,70 @@ public class Recepcionista  extends Usuario{
      * @return
      */
     public String getNombreCompleto() {
-        return nombre + " " + apellido; }
+        return nombre + " " + apellido;
+    }
 
     /**
      * Método para obtener el ID del recepcionista
      * @return
      */
     public String getIdRecepcionista() {
-        return idRecepcionista; }
+        return idRecepcionista;
+    }
 
     /**
      * Método para establecer el ID del recepcionista
      * @param id
      */
     public void setIdRecepcionista(String id) {
-        this.idRecepcionista = id; }
+        this.idRecepcionista = id;
+    }
 
     /**
      * Método para obtener el nombre del recepcionista
      * @return
      */
     public String getNombre() {
-        return nombre; }
+        return nombre;
+    }
 
     /**
      * Método para establecer el nombre del recepcionista
      * @param nombre
      */
     public void setNombre(String nombre) {
-        this.nombre = nombre; }
+        this.nombre = nombre;
+    }
 
     /**
      * Método para obtener el apellido del recepcionista
      * @return
      */
     public String getApellido() {
-        return apellido; }
+        return apellido;
+    }
 
     /**
      * Método para establecer el apellido del recepcionista
      * @param apellido
      */
     public void setApellido(String apellido) {
-        this.apellido = apellido; }
+        this.apellido = apellido;
+    }
 
     /**
      * Método para obtener el turno del recepcionista
      * @return
      */
     public TurnoRecepcionista getTurno() {
-        return turno; }
+        return turno;
+    }
 
     /**
      * Método para establecer el turno del recepcionista
      * @param turno
      */
     public void setTurno(TurnoRecepcionista turno) {
-        this.turno = turno; }
+        this.turno = turno;
+    }
 }

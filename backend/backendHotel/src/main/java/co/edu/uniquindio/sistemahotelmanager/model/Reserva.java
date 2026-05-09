@@ -1,8 +1,13 @@
 package co.edu.uniquindio.sistemahotelmanager.model;
 
+import co.edu.uniquindio.sistemahotelmanager.enums.EstadoReserva;
+
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
+/**
+ * Clase que representa una reserva en el sistema de gestión hotelera.
+ */
 public class Reserva {
 
     private String idReserva;
@@ -65,166 +70,190 @@ public class Reserva {
      * @return
      */
     public String getIdReserva() {
-        return idReserva; }
+        return idReserva;
+    }
 
     /**
      * Método para establecer el ID de la reserva
      * @param id
      */
     public void setIdReserva(String id) {
-        this.idReserva = id; }
+        this.idReserva = id;
+    }
 
     /**
      * Método para obtener el código de la reserva
      * @return
      */
     public String getCodigoReserva() {
-        return codigoReserva; }
+        return codigoReserva;
+    }
 
     /**
      * Método para establecer el código de la reserva
      * @param codigoReserva
      */
     public void setCodigoReserva(String codigoReserva) {
-        this.codigoReserva = codigoReserva; }
+        this.codigoReserva = codigoReserva;
+    }
 
     /**
      * Método para obtener la fecha de la reserva
      * @return
      */
     public LocalDate getFechaReserva() {
-        return fechaReserva; }
+        return fechaReserva;
+    }
 
     /**
      * Método para establecer la fecha de la reserva
      * @param f
      */
     public void setFechaReserva(LocalDate f) {
-        this.fechaReserva = f; }
+        this.fechaReserva = f;
+    }
 
     /**
      * Método para obtener la fecha de inicio de la reserva
      * @return
      */
     public LocalDate getFechaInicio() {
-        return fechaInicio; }
+        return fechaInicio;
+    }
 
     /**
      * Método para establecer la fecha de inicio de la reserva
      * @param f
      */
     public void setFechaInicio(LocalDate f) {
-        this.fechaInicio = f; }
+        this.fechaInicio = f;
+    }
 
     /**
      * Método para obtener la fecha de fin de la reserva
      * @return
      */
     public LocalDate getFechaFin() {
-        return fechaFin; }
+        return fechaFin;
+    }
 
     /**
      * Método para establecer la fecha de fin de la reserva
      * @param f
      */
     public void setFechaFin(LocalDate f) {
-        this.fechaFin = f; }
+        this.fechaFin = f;
+    }
 
     /**
      * Método para obtener la fecha de estadía de la reserva
      * @return
      */
     public LocalDate getFechaEstadia() {
-        return fechaEstadia; }
+        return fechaEstadia;
+    }
 
     /**
      * Método para establecer la fecha de estadía de la reserva
      * @param f
      */
     public void setFechaEstadia(LocalDate f) {
-        this.fechaEstadia = f; }
+        this.fechaEstadia = f;
+    }
 
     /**
      * Método para obtener la cantidad total de personas en la reserva (adultos + niños)
      * @return
      */
     public int getCantidadPersonas() {
-        return cantidadPersonas; }
+        return cantidadPersonas;
+    }
 
     /**
      * Método para establecer la cantidad total de personas en la reserva (adultos + niños)
      * @param c
      */
     public void setCantidadPersonas(int c) {
-        this.cantidadPersonas = c; }
+        this.cantidadPersonas = c;
+    }
 
     /**
      * Método para obtener la cantidad de adultos en la reserva
      * @return
      */
     public int getAdultos() {
-        return adultos; }
+        return adultos;
+    }
 
     /**
      * Método para establecer la cantidad de adultos en la reserva
      * @param a
      */
     public void setAdultos(int a) {
-        this.adultos = a; }
+        this.adultos = a;
+    }
 
     /**
      * Método para obtener la cantidad de niños en la reserva
      * @return
      */
     public int getNinos() {
-        return ninos; }
+        return ninos;
+    }
 
     /**
      * Método para establecer la cantidad de niños en la reserva
      * @param n
      */
     public void setNinos(int n) {
-        this.ninos = n; }
+        this.ninos = n;
+    }
 
     /**
      * Método para obtener el estado de la reserva
      * @return
      */
     public EstadoReserva getEstadoReserva() {
-        return estadoReserva; }
+        return estadoReserva;
+    }
 
     /**
      * Método para establecer el estado de la reserva
      * @param e
      */
     public void setEstadoReserva(EstadoReserva e) {
-        this.estadoReserva = e; }
+        this.estadoReserva = e;
+    }
 
     /**
      * Método para obtener el huésped asociado a la reserva
      * @return
      */
     public Huesped getHuesped() {
-        return huesped; }
+        return huesped;
+    }
 
     /**
      * Método para establecer el huésped asociado a la reserva
      * @param h
      */
     public void setHuesped(Huesped h) {
-        this.huesped = h; }
+        this.huesped = h;
+    }
 
     /**
      * Método para obtener la habitación asociada a la reserva
      * @return
      */
     public Habitacion getHabitacion() {
-        return habitacion; }
+        return habitacion;
+    }
 
     /**
      * Método para establecer la habitación asociada a la reserva
      * @param h
      */
     public void setHabitacion(Habitacion h) {
-        this.habitacion = h; }
+        this.habitacion = h;
+    }
 }

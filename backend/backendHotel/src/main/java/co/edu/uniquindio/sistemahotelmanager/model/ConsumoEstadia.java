@@ -2,6 +2,9 @@ package co.edu.uniquindio.sistemahotelmanager.model;
 
 import java.time.LocalDate;
 
+/**
+ * Clase que representa un consumo asociado a una estadía en el sistema de gestión hotelera.
+ */
 public class ConsumoEstadia {
 
     private String idConsumo;
@@ -42,82 +45,94 @@ public class ConsumoEstadia {
      * @return
      */
     public String getIdConsumo() {
-        return idConsumo; }
+        return idConsumo;
+    }
 
     /**
      * Método para establecer el ID del consumo.
      * @param id
      */
     public void setIdConsumo(String id) {
-        this.idConsumo = id; }
+        this.idConsumo = id;
+    }
 
     /**
      * Método para obtener la descripción del consumo.
      * @return
      */
     public String getDescripcion() {
-        return descripcion; }
+        return descripcion;
+    }
 
     /**
      * Método para establecer la descripción del consumo.
      * @param d
      */
     public void setDescripcion(String d) {
-        this.descripcion = d; }
+        this.descripcion = d;
+    }
 
     /**
      * Método para obtener la fecha del consumo.
      * @return
      */
     public LocalDate getFecha() {
-        return fecha; }
+        return fecha;
+    }
 
     /**
      * Método para establecer la fecha del consumo.
      * @param f
      */
     public void setFecha(LocalDate f) {
-        this.fecha = f; }
+        this.fecha = f;
+    }
 
     /**
      * Método para obtener la cantidad del consumo.
      * @return
      */
     public int getCantidad() {
-        return cantidad; }
+        return cantidad;
+    }
 
     /**
      * Método para establecer la cantidad del consumo.
      * @param c
      */
     public void setCantidad(int c) {
-        this.cantidad = c; }
+        this.cantidad = c;
+    }
 
     /**
      * Método para obtener el precio unitario del consumo.
      * @return
      */
     public double getPrecioUnitario() {
-        return precioUnitario; }
+        return precioUnitario;
+    }
 
     /**
      * Método para establecer el precio unitario del consumo.
      * @param p
      */
     public void setPrecioUnitario(double p) {
-        this.precioUnitario = p; }
+        this.precioUnitario = p;
+    }
 
     /**
      * Método para obtener el subtotal del consumo.
      * @return
      */
     public double getSubtotal() {
-        return subtotal; }
+        return subtotal;
+    }
 
     /**
      * Método para establecer el subtotal del consumo.
      * @param s
      */
     public void setSubtotal(double s) {
-        this.subtotal = s; }
+        this.subtotal = s;
+    }
 }

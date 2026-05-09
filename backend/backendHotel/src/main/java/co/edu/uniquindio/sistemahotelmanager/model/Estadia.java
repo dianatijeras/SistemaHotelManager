@@ -1,9 +1,14 @@
 package co.edu.uniquindio.sistemahotelmanager.model;
 
+import co.edu.uniquindio.sistemahotelmanager.enums.EstadoEstadia;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Clase que representa una estadía en el sistema de gestión hotelera.
+ */
 public class Estadia {
 
     private String idEstadia;
@@ -72,124 +77,142 @@ public class Estadia {
      * @return
      */
     public String getIdEstadia() {
-        return idEstadia; }
+        return idEstadia;
+    }
 
     /**
      * Método para establecer el ID de la estadía
      * @param id
      */
     public void setIdEstadia(String id) {
-        this.idEstadia = id; }
+        this.idEstadia = id;
+    }
 
     /**
      * Método para obtener la fecha de check-in de la estadía
      * @return
      */
     public LocalDateTime getFechaCheckIn() {
-        return fechaCheckIn; }
+        return fechaCheckIn;
+    }
 
     /**
      * Método para establecer la fecha de check-in de la estadía
      * @param f
      */
     public void setFechaCheckIn(LocalDateTime f) {
-        this.fechaCheckIn = f; }
+        this.fechaCheckIn = f;
+    }
 
     /**
      * Método para obtener la fecha de check-out de la estadía
      * @return
      */
     public LocalDateTime getFechaCheckOut() {
-        return fechaCheckOut; }
+        return fechaCheckOut;
+    }
 
     /**
      * Método para establecer la fecha de check-out de la estadía
      * @param f
      */
     public void setFechaCheckOut(LocalDateTime f) {
-        this.fechaCheckOut = f; }
+        this.fechaCheckOut = f;
+    }
 
     /**
      * Método para obtener el total de la habitación de la estadía
      * @return
      */
     public double getTotalHabitacion() {
-        return totalHabitacion; }
+        return totalHabitacion;
+    }
 
     /**
      * Método para establecer el total de la habitación de la estadía
      * @param t
      */
     public void setTotalHabitacion(double t) {
-        this.totalHabitacion = t; }
+        this.totalHabitacion = t;
+    }
 
     /**
      * Método para obtener el total de consumos de la estadía
      * @return
      */
     public double getTotalConsumos() {
-        return totalConsumos; }
+        return totalConsumos;
+    }
 
     /**
      * Método para establecer el total de consumos de la estadía
      * @param t
      */
     public void setTotalConsumos(double t) {
-        this.totalConsumos = t; }
+        this.totalConsumos = t;
+    }
 
     /**
      * Método para obtener el total final de la estadía (total habitación + total consumos)
      * @return
      */
     public double getTotalFinal() {
-        return totalFinal; }
+        return totalFinal;
+    }
 
     /**
      * Método para establecer el total final de la estadía (total habitación + total consumos)
      * @param t
      */
     public void setTotalFinal(double t) {
-        this.totalFinal = t; }
+        this.totalFinal = t;
+    }
 
     /**
      * Método para obtener el estado de la estadía
      * @return
      */
     public EstadoEstadia getEstadoEstadia() {
-        return estadoEstadia; }
+        return estadoEstadia;
+    }
 
     /**
      * Método para establecer el estado de la estadía
      * @param e
      */
     public void setEstadoEstadia(EstadoEstadia e) {
-        this.estadoEstadia = e; }
+        this.estadoEstadia = e;
+    }
 
     /**
      * Método para obtener la reserva asociada a la estadía
      * @return
      */
     public Reserva getReserva() {
-        return reserva; }
+        return reserva;
+    }
 
     /**
      * Método para establecer la reserva asociada a la estadía
      * @param r
      */
     public void setReserva(Reserva r) {
-        this.reserva = r; }
+        this.reserva = r;
+    }
 
     /**
      * Método para obtener la lista de consumos asociados a la estadía
      * @return
      */
     public List<ConsumoEstadia> getConsumos() {
-        return consumos; }
+        return consumos;
+    }
 
     /**
      * Método para establecer la lista de consumos asociados a la estadía
      * @param c
      */
     public void setConsumos(List<ConsumoEstadia> c) {
-        this.consumos = c; }
+        this.consumos = c;
+    }
 }

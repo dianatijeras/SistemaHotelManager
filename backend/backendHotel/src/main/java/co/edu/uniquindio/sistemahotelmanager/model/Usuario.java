@@ -1,5 +1,7 @@
 package co.edu.uniquindio.sistemahotelmanager.model;
 
+import co.edu.uniquindio.sistemahotelmanager.enums.Rol;
+
 /**
  * Clase abstracta que representa a un usuario del sistema.
  */

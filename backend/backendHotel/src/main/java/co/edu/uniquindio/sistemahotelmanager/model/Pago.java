@@ -1,7 +1,13 @@
 package co.edu.uniquindio.sistemahotelmanager.model;
 
+import co.edu.uniquindio.sistemahotelmanager.enums.EstadoPago;
+import co.edu.uniquindio.sistemahotelmanager.enums.MetodoPago;
+
 import java.time.LocalDateTime;
 
+/**
+ * Clase que representa un pago asociado a una estadía en el sistema de gestión hotelera.
+ */
 public class Pago {
 
     private String idPago;
@@ -62,111 +68,127 @@ public class Pago {
      * @return
      */
     public String getIdPago() {
-        return idPago; }
+        return idPago;
+    }
 
     /**
      * Método para establecer el ID del pago
      * @param id
      */
     public void setIdPago(String id) {
-        this.idPago = id; }
+        this.idPago = id;
+    }
 
     /**
      * Método para obtener el monto del pago
      * @return
      */
     public double getMonto() {
-        return monto;}
+        return monto;
+    }
 
     /**
      * Método para establecer el monto del pago
      * @param m
      */
     public void setMonto(double m) {
-        this.monto = m; }
+        this.monto = m;
+    }
 
     /**
      * Método para obtener la fecha del pago
      * @return
      */
     public LocalDateTime getFechaPago() {
-        return fechaPago; }
+        return fechaPago;
+    }
 
     /**
      * Método para establecer la fecha del pago
      * @param f
      */
     public void setFechaPago(LocalDateTime f) {
-        this.fechaPago = f; }
+        this.fechaPago = f;
+    }
 
     /**
      * Método para obtener el método de pago
      * @return
      */
     public MetodoPago getMetodoPago() {
-        return metodoPago; }
+        return metodoPago;
+    }
 
     /**
      * Método para establecer el método de pago
      * @param m
      */
     public void setMetodoPago(MetodoPago m) {
-        this.metodoPago = m; }
+        this.metodoPago = m;
+    }
 
     /**
      * Método para obtener el estado del pago
      * @return
      */
     public EstadoPago getEstadoPago() {
-        return estadoPago; }
+        return estadoPago;
+    }
 
     /**
      * Método para establecer el estado del pago
      * @param e
      */
     public void setEstadoPago(EstadoPago e) {
-        this.estadoPago = e; }
+        this.estadoPago = e;
+    }
 
     /**
      * Método para obtener la referencia de la pasarela de pago
      * @return
      */
     public String getReferenciaPasarela() {
-        return referenciaPasarela; }
+        return referenciaPasarela;
+    }
 
     /**
      * Método para establecer la referencia de la pasarela de pago
      * @param r
      */
     public void setReferenciaPasarela(String r) {
-        this.referenciaPasarela = r; }
+        this.referenciaPasarela = r;
+    }
 
     /**
      * Método para obtener las observaciones del pago
      * @return
      */
     public String getObservaciones() {
-        return observaciones; }
+        return observaciones;
+    }
 
     /**
      * Método para establecer las observaciones del pago
      * @param o
      */
     public void setObservaciones(String o) {
-        this.observaciones = o; }
+        this.observaciones = o;
+    }
 
     /**
      * Método para obtener la estadía asociada al pago
      * @return
      */
     public Estadia getEstadia() {
-        return estadia; }
+        return estadia;
+    }
 
     /**
      * Método para establecer la estadía asociada al pago
      * @param e
      */
     public void setEstadia(Estadia e) {
-        this.estadia = e; }
+        this.estadia = e;
+    }
 
 }

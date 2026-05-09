@@ -1,5 +1,11 @@
 package co.edu.uniquindio.sistemahotelmanager.model;
 
+import co.edu.uniquindio.sistemahotelmanager.enums.EstadoHabitacion;
+import co.edu.uniquindio.sistemahotelmanager.enums.TipoHabitacion;
+
+/**
+ * Clase que representa una habitación en el sistema de gestión hotelera.
+ */
 public class Habitacion {
 
     private int numeroHabitacion;
@@ -57,110 +63,126 @@ public class Habitacion {
      * @return
      */
     public int getNumeroHabitacion() {
-        return numeroHabitacion; }
+        return numeroHabitacion;
+    }
 
     /**
      * Metodo para establecer el numero de la habitacion
      * @param n
      */
     public void setNumeroHabitacion(int n) {
-        this.numeroHabitacion = n; }
+        this.numeroHabitacion = n;
+    }
 
     /**
      * Metodo para obtener el tipo de habitacion
      * @return
      */
     public TipoHabitacion getTipoHabitacion() {
-        return tipoHabitacion; }
+        return tipoHabitacion;
+    }
 
     /**
      * Metodo para establecer el tipo de habitacion
      * @param t
      */
     public void setTipoHabitacion(TipoHabitacion t) {
-        this.tipoHabitacion = t; }
+        this.tipoHabitacion = t;
+    }
 
     /**
      * Metodo para obtener el precio por noche de la habitacion
      * @return
      */
     public double getPrecioNoche() {
-        return precioNoche; }
+        return precioNoche;
+    }
 
     /**
      *  Metodo para establecer el precio por noche de la habitacion
      * @param p
      */
     public void setPrecioNoche(double p) {
-        this.precioNoche = p; }
+        this.precioNoche = p;
+    }
 
     /**
      * Metodo para obtener el piso donde se encuentra la habitacion
      * @return
      */
     public int getPiso() {
-        return piso; }
+        return piso;
+    }
 
     /**
      * Metodo para establecer el piso donde se encuentra la habitacion
      * @param piso
      */
     public void setPiso(int piso) {
-        this.piso = piso; }
+        this.piso = piso;
+    }
 
     /**
      * Metodo para obtener la descripcion de la habitacion
      * @return
      */
     public String getDescripcion() {
-        return descripcion; }
+        return descripcion;
+    }
 
     /**
      * Metodo para establecer la descripcion de la habitacion
      * @param d
      */
     public void setDescripcion(String d) {
-        this.descripcion = d; }
+        this.descripcion = d;
+    }
 
     /**
      * Metodo para obtener la capacidad de la habitacion
      * @return
      */
     public int getCapacidad() {
-        return capacidad; }
+        return capacidad;
+    }
 
     /**
      * Metodo para establecer la capacidad de la habitacion
      * @param c
      */
     public void setCapacidad(int c) {
-        this.capacidad = c; }
+        this.capacidad = c;
+    }
 
     /**
      * Metodo para obtener el estado de la habitacion
      * @return
      */
     public EstadoHabitacion getEstadoHabitacion() {
-        return estadoHabitacion; }
+        return estadoHabitacion;
+    }
 
     /**
      * Metodo para establecer el estado de la habitacion
      * @param e
      */
     public void setEstadoHabitacion(EstadoHabitacion e) {
-        this.estadoHabitacion = e; }
+        this.estadoHabitacion = e;
+    }
 
     /**
      * Metodo para obtener la categoria de la habitacion
      * @return
      */
     public CategoriaHabitacion getCategoria() {
-        return categoria; }
+        return categoria;
+    }
 
     /**
      * Metodo para establecer la categoria de la habitacion
      * @param c
      */
     public void setCategoria(CategoriaHabitacion c) {
-        this.categoria = c; }
+        this.categoria = c;
+    }
 }

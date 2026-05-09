@@ -1,6 +1,11 @@
 package co.edu.uniquindio.sistemahotelmanager.model;
 
-public class CategoriaEstadia {
+import co.edu.uniquindio.sistemahotelmanager.enums.TipoHabitacion;
+
+/**
+ * Clase que representa una categoría de habitación en el sistema de gestión hotelera.
+ */
+public class CategoriaHabitacion {
 
     private String idCategoria;
     private String nombre;
@@ -37,96 +42,110 @@ public class CategoriaEstadia {
      * @return
      */
     public String getIdCategoria() {
-        return idCategoria; }
+        return idCategoria;
+    }
 
     /**
      * Método para establecer el ID de la categoría de habitación
      * @param idCategoria
      */
     public void setIdCategoria(String idCategoria) {
-        this.idCategoria = idCategoria; }
+        this.idCategoria = idCategoria;
+    }
 
     /**
      * Método para obtener el nombre de la categoría de habitación
      * @return
      */
     public String getNombre() {
-        return nombre; }
+        return nombre;
+    }
 
     /**
      * Método para establecer el nombre de la categoría de habitación
      * @param nombre
      */
     public void setNombre(String nombre) {
-        this.nombre = nombre; }
+        this.nombre = nombre;
+    }
 
     /**
      * Método para obtener la descripción de la categoría de habitación
      * @return
      */
     public String getDescripcion() {
-        return descripcion; }
+        return descripcion;
+    }
 
     /**
      * Método para establecer la descripción de la categoría de habitación
      * @param descripcion
      */
     public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion; }
+        this.descripcion = descripcion;
+    }
 
     /**
      * Método para obtener la capacidad base de la categoría de habitación
      * @return
      */
     public int getCapacidadBase() {
-        return capacidadBase; }
+        return capacidadBase;
+    }
 
     /**
      * Método para establecer la capacidad base de la categoría de habitación
      * @param capacidadBase
      */
     public void setCapacidadBase(int capacidadBase) {
-        this.capacidadBase = capacidadBase; }
+        this.capacidadBase = capacidadBase;
+    }
 
     /**
      * Método para obtener la cantidad de personas permitida en la categoría de habitación
      * @return
      */
     public int getCantidadPersonas() {
-        return cantidadPersonas; }
+        return cantidadPersonas;
+    }
 
     /**
      * Método para establecer la cantidad de personas permitida en la categoría de habitación
      * @param cantidadPersonas
      */
     public void setCantidadPersonas(int cantidadPersonas) {
-        this.cantidadPersonas = cantidadPersonas; }
+        this.cantidadPersonas = cantidadPersonas;
+    }
 
     /**
      * Método para obtener el precio base de la categoría de habitación
      * @return
      */
     public double getPrecioBase() {
-        return precioBase; }
+        return precioBase;
+    }
 
     /**
      * Método para establecer el precio base de la categoría de habitación
      * @param precioBase
      */
     public void setPrecioBase(double precioBase) {
-        this.precioBase = precioBase; }
+        this.precioBase = precioBase;
+    }
 
     /**
      * Método para obtener el tipo de habitación asociado a la categoría de habitación
      * @return
      */
     public TipoHabitacion getTipo() {
-        return tipo; }
+        return tipo;
+    }
 
     /**
      * Método para establecer el tipo de habitación asociado a la categoría de habitación
      * @param tipo
      */
     public void setTipo(TipoHabitacion tipo) {
-        this.tipo = tipo; }
+        this.tipo = tipo;
+    }
 }
