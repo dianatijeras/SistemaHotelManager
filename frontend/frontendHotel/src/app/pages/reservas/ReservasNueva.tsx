@@ -6,6 +6,10 @@ import { Button } from "../../components/ui/Button";
 import { Habitacion, Huesped } from "../../types";
 import { hotelService } from "../../services/hotelService";
 
+/**
+ * Componente para crear una nueva reserva en el hotel. Permite seleccionar un huésped, una habitación disponible, fechas de estadía y número de personas para generar una nueva reserva.
+ * @constructor
+ */
 export function ReservasNueva() {
     const navigate = useNavigate();
     const [huespedes, setHuespedes] = useState<Huesped[]>([]);
