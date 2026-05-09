@@ -112,6 +112,6 @@ public class Huesped extends Usuario{
      *  Método para establecer el correo del huésped
      * @param correo
      */
-    public void setCorreo(String correo) { 
+    public void setCorreo(String correo) {
         this.correo = correo; }
 }
