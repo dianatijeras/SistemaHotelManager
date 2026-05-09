@@ -17,6 +17,7 @@ import java.util.stream.Collectors;
  * Servicio que maneja la lógica de negocio relacionada con las estadías en el sistema de gestión hotelera.
  * Permite realizar check-in, check-out, agregar consumos a una estadía, y listar estadías según diferentes criterios.
  */
+@Service
 public class EstadiaService {
     private final DataStore dataStore;
     private final ReservaService reservaService;

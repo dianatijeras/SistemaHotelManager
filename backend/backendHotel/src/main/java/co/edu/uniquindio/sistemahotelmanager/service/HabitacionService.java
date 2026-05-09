@@ -11,6 +11,7 @@ import java.util.stream.Collectors;
 /**
  * Servicio para gestionar las operaciones relacionadas con las habitaciones del hotel.
  */
+@Service
 public class HabitacionService {
 
     private final DataStore dataStore;
