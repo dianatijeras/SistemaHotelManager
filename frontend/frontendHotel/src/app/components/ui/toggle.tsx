@@ -6,6 +6,11 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "./utils";
 
+/**
+ * Toggle es un componente de interfaz de usuario que permite a los usuarios alternar entre dos estados, como encendido/apagado o seleccionado/no seleccionado.
+ * Es útil para opciones que tienen dos estados mutuamente excluyentes. Este componente se basa en el TogglePrimitive de Radix UI y se ha estilizado utilizando la biblioteca class-variance-authority (CVA) para proporcionar variantes de estilo y tamaño.
+ * El Toggle es accesible, con soporte para estados deshabilitados e inválidos, y se puede personalizar fácilmente a través de sus variantes.
+ */
 const toggleVariants = cva(
   "inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium hover:bg-muted hover:text-muted-foreground disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-accent data-[state=on]:text-accent-foreground [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] outline-none transition-[color,box-shadow] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive whitespace-nowrap",
   {
@@ -28,6 +33,15 @@ const toggleVariants = cva(
   },
 );
 
+/**
+ * Toggle es un componente de interfaz de usuario que permite a los usuarios alternar entre dos estados, como encendido/apagado o seleccionado/no seleccionado.
+ * Es útil para opciones que tienen dos estados mutuamente excluyentes. Este componente se basa en el TogglePrimitive de Radix UI y se ha estilizado utilizando la biblioteca class-variance-authority (CVA) para proporcionar variantes de estilo y tamaño.
+ * @param className
+ * @param variant
+ * @param size
+ * @param props
+ * @constructor
+ */
 function Toggle({
   className,
   variant,

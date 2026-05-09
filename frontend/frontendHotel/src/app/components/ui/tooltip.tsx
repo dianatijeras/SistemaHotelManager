@@ -5,6 +5,13 @@ import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 
 import { cn } from "./utils";
 
+/**
+ * TooltipProvider es un componente que envuelve a TooltipPrimitive.Provider y se encarga de proporcionar el contexto necesario para que los componentes de tooltip funcionen correctamente.
+ * Permite configurar la duración del retraso antes de mostrar el tooltip a través de la prop delayDuration.
+ * @param delayDuration
+ * @param props
+ * @constructor
+ */
 function TooltipProvider({
   delayDuration = 0,
   ...props
@@ -18,6 +25,11 @@ function TooltipProvider({
   );
 }
 
+/**
+ * Tooltip es un componente que envuelve a TooltipPrimitive.Root y se encarga de proporcionar el contexto necesario para que los componentes de tooltip funcionen correctamente.
+ * @param props
+ * @constructor
+ */
 function Tooltip({
   ...props
 }: React.ComponentProps<typeof TooltipPrimitive.Root>) {
@@ -28,12 +40,26 @@ function Tooltip({
   );
 }
 
+/**
+ * TooltipTrigger es un componente que envuelve a TooltipPrimitive.Trigger y se encarga de proporcionar el contexto necesario para que los componentes de tooltip funcionen correctamente.
+ * @param props
+ * @constructor
+ */
 function TooltipTrigger({
   ...props
 }: React.ComponentProps<typeof TooltipPrimitive.Trigger>) {
   return <TooltipPrimitive.Trigger data-slot="tooltip-trigger" {...props} />;
 }
 
+/**
+ * TooltipContent es un componente que envuelve a TooltipPrimitive.Content y se encarga de proporcionar el contexto necesario para que los componentes de tooltip funcionen correctamente.
+ * Permite configurar la distancia entre el tooltip y el elemento al que está asociado a través de la prop sideOffset.
+ * @param className
+ * @param sideOffset
+ * @param children
+ * @param props
+ * @constructor
+ */
 function TooltipContent({
   className,
   sideOffset = 0,

@@ -5,6 +5,14 @@ import * as TabsPrimitive from "@radix-ui/react-tabs";
 
 import { cn } from "./utils";
 
+/**
+ * Tabs es un componente de interfaz de usuario que permite organizar contenido en secciones o pestañas.
+ * Cada pestaña representa una sección diferente del contenido, y al hacer clic en una pestaña, se muestra el contenido asociado a esa pestaña.
+ * Este componente es útil para mejorar la navegación y la organización de la información en una aplicación o sitio web.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function Tabs({
   className,
   ...props
@@ -18,6 +26,14 @@ function Tabs({
   );
 }
 
+/**
+ * TabsList es un componente que se utiliza dentro de Tabs para contener las pestañas o triggers.
+ * Es el contenedor que agrupa las pestañas y les proporciona un estilo y una estructura visual.
+ * Generalmente, se utiliza para organizar las pestañas en una fila o columna, dependiendo del diseño de la interfaz de usuario.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function TabsList({
   className,
   ...props
@@ -34,6 +50,14 @@ function TabsList({
   );
 }
 
+/**
+ * TabsTrigger es un componente que representa una pestaña o trigger dentro de TabsList.
+ * Es el elemento interactivo que el usuario puede hacer clic para cambiar entre las diferentes secciones de contenido.
+ * Cada TabsTrigger está asociado a un contenido específico, y al hacer clic en él, se muestra el contenido correspondiente a esa pestaña.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function TabsTrigger({
   className,
   ...props
@@ -50,6 +74,14 @@ function TabsTrigger({
   );
 }
 
+/**
+ * TabsContent es un componente que representa el contenido asociado a una pestaña o trigger específico dentro de Tabs.
+ * Es el área donde se muestra la información o el contenido relacionado con la pestaña seleccionada.
+ * Cada TabsContent está vinculado a un TabsTrigger mediante un identificador, y solo se muestra el contenido correspondiente a la pestaña activa.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function TabsContent({
   className,
   ...props

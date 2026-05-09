@@ -5,6 +5,14 @@ import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area";
 
 import { cn } from "./utils";
 
+/**
+ * ScrollArea es un componente que envuelve el contenido que se desea hacer scrollable.
+ * Utiliza ScrollAreaPrimitive.Root de Radix UI para manejar la lógica de scroll y proporciona estilos personalizados.
+ * @param className
+ * @param children
+ * @param props
+ * @constructor
+ */
 function ScrollArea({
   className,
   children,
@@ -28,6 +36,14 @@ function ScrollArea({
   );
 }
 
+/**
+ * ScrollBar es un componente que representa la barra de desplazamiento dentro del ScrollArea.
+ * Utiliza ScrollAreaPrimitive.ScrollAreaScrollbar de Radix UI para manejar la lógica de la barra de desplazamiento y proporciona estilos personalizados.
+ * @param className
+ * @param orientation
+ * @param props
+ * @constructor
+ */
 function ScrollBar({
   className,
   orientation = "vertical",

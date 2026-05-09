@@ -6,6 +6,15 @@ import * as ResizablePrimitive from "react-resizable-panels";
 
 import { cn } from "./utils";
 
+/**
+ * ResizablePlanelGroup es un componente que se utiliza para crear un grupo de paneles redimensionables.
+ * Este componente es parte de la biblioteca react-resizable-panels y se utiliza para organizar y manejar la disposición de los paneles dentro de una interfaz de usuario.
+ * El componente acepta varias propiedades, incluyendo className para aplicar estilos personalizados y otras propiedades específicas de ResizablePrimitive.PanelGroup.
+ * Al utilizar este componente, los desarrolladores pueden crear interfaces flexibles y adaptables que permiten a los usuarios ajustar el tamaño de los paneles según sus necesidades.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function ResizablePanelGroup({
   className,
   ...props
@@ -22,12 +31,30 @@ function ResizablePanelGroup({
   );
 }
 
+/**
+ * ResizablePanel es un componente que representa un panel individual dentro de un grupo de paneles redimensionables.
+ * Este componente es parte de la biblioteca react-resizable-panels y se utiliza para definir el contenido y la funcionalidad de cada panel dentro del grupo.
+ * El componente acepta varias propiedades, incluyendo className para aplicar estilos personalizados y otras propiedades específicas de ResizablePrimitive.Panel.
+ * Al utilizar este componente, los desarrolladores pueden crear interfaces flexibles y adaptables que permiten a los usuarios ajustar el tamaño de los paneles según sus necesidades.
+ * @param props
+ * @constructor
+ */
 function ResizablePanel({
   ...props
 }: React.ComponentProps<typeof ResizablePrimitive.Panel>) {
   return <ResizablePrimitive.Panel data-slot="resizable-panel" {...props} />;
 }
 
+/**
+ * ResizableHandle es un componente que representa el controlador de redimensionamiento entre los paneles en un grupo de paneles redimensionables.
+ * Este componente es parte de la biblioteca react-resizable-panels y se utiliza para permitir a los usuarios ajustar el tamaño de los paneles arrastrando el controlador.
+ * El componente acepta varias propiedades, incluyendo withHandle para mostrar u ocultar el controlador visual, className para aplicar estilos personalizados y otras propiedades específicas de ResizablePrimitive.PanelResizeHandle.
+ * Al utilizar este componente, los desarrolladores pueden crear interfaces flexibles y adaptables que permiten a los usuarios ajustar el tamaño de los paneles según sus necesidades.
+ * @param withHandle
+ * @param className
+ * @param props
+ * @constructor
+ */
 function ResizableHandle({
   withHandle,
   className,

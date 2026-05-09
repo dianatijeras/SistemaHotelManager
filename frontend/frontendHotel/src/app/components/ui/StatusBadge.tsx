@@ -5,6 +5,12 @@ interface StatusBadgeProps {
   type?: 'reserva' | 'habitacion' | 'pago';
 }
 
+/**
+ * Componente para mostrar el estado de una reserva, habitación o pago con un badge de colores.
+ * @param status
+ * @param type
+ * @constructor
+ */
 export function StatusBadge({ status, type = 'reserva' }: StatusBadgeProps) {
   const getStyles = () => {
     if (type === 'habitacion') {

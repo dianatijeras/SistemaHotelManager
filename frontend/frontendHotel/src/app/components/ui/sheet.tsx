@@ -6,28 +6,57 @@ import { XIcon } from "lucide-react";
 
 import { cn } from "./utils";
 
+/**
+ * Un componente de hoja deslizante (sheet) que se puede usar para mostrar contenido adicional sin salir de la página actual.
+ * Utiliza el componente Dialog de Radix UI como base y lo personaliza para crear una experiencia de hoja deslizante.
+ * @param props
+ * @constructor
+ */
 function Sheet({ ...props }: React.ComponentProps<typeof SheetPrimitive.Root>) {
   return <SheetPrimitive.Root data-slot="sheet" {...props} />;
 }
 
+/**
+ * Un componente de activador para la hoja deslizante.
+ * Este componente se utiliza para abrir la hoja cuando se hace clic en él.
+ * @param props
+ * @constructor
+ */
 function SheetTrigger({
   ...props
 }: React.ComponentProps<typeof SheetPrimitive.Trigger>) {
   return <SheetPrimitive.Trigger data-slot="sheet-trigger" {...props} />;
 }
 
+/**
+ * Un componente de cierre para la hoja deslizante.
+ * Este componente se utiliza para cerrar la hoja cuando se hace clic en él.
+ */
 function SheetClose({
   ...props
 }: React.ComponentProps<typeof SheetPrimitive.Close>) {
   return <SheetPrimitive.Close data-slot="sheet-close" {...props} />;
 }
 
+/**
+ * Un componente de portal para la hoja deslizante.
+ * Este componente se utiliza para renderizar la hoja en un portal, lo que permite que se muestre por encima de otros elementos en la página.
+ * @param props
+ * @constructor
+ */
 function SheetPortal({
   ...props
 }: React.ComponentProps<typeof SheetPrimitive.Portal>) {
   return <SheetPrimitive.Portal data-slot="sheet-portal" {...props} />;
 }
 
+/**
+ * Un componente de superposición para la hoja deslizante.
+ * Este componente se utiliza para mostrar una superposición semitransparente detrás de la hoja cuando está abierta, lo que ayuda a enfocar la atención del usuario en la hoja.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function SheetOverlay({
   className,
   ...props
@@ -44,6 +73,16 @@ function SheetOverlay({
   );
 }
 
+/**
+ * Un componente de contenido para la hoja deslizante.
+ * Este componente se utiliza para mostrar el contenido de la hoja.
+ * Se puede configurar para que se deslice desde diferentes lados de la pantalla (arriba, derecha, abajo, izquierda) utilizando la propiedad "side".
+ * @param className
+ * @param children
+ * @param side
+ * @param props
+ * @constructor
+ */
 function SheetContent({
   className,
   children,
@@ -81,6 +120,13 @@ function SheetContent({
   );
 }
 
+/**
+ * Un componente de encabezado para la hoja deslizante.
+ * Este componente se utiliza para mostrar un encabezado en la hoja, que puede incluir un título y una descripción.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function SheetHeader({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
@@ -91,6 +137,13 @@ function SheetHeader({ className, ...props }: React.ComponentProps<"div">) {
   );
 }
 
+/**
+ * Un componente de pie de página para la hoja deslizante.
+ * Este componente se utiliza para mostrar un pie de página en la hoja, que puede incluir acciones o información adicional.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function SheetFooter({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
@@ -101,6 +154,13 @@ function SheetFooter({ className, ...props }: React.ComponentProps<"div">) {
   );
 }
 
+/**
+ * Un componente de título para la hoja deslizante.
+ * Este componente se utiliza para mostrar un título en el encabezado de la hoja.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function SheetTitle({
   className,
   ...props
@@ -114,6 +174,13 @@ function SheetTitle({
   );
 }
 
+/**
+ * Un componente de descripción para la hoja deslizante.
+ * Este componente se utiliza para mostrar una descripción en el encabezado de la hoja, debajo del título.
+ * @param className
+ * @param props
+ * @constructor
+ */
 function SheetDescription({
   className,
   ...props
