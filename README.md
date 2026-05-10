@@ -145,7 +145,7 @@ npm run dev
 
 ---
 
-## 🔌 Endpoints de la API REST
+##  Endpoints de la API REST
 
 ### Reservas — `/api/reservas`
 | Método | Endpoint | Descripción |
@@ -245,7 +245,7 @@ npm run dev
 
 ---
 
-## 🔄 Flujo Operativo del Sistema
+##  Flujo Operativo del Sistema
 
 ```
 1. RESERVA
