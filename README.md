@@ -157,7 +157,6 @@ Antes de ejecutar el proyecto, asegúrate de tener instalado:
 # 1. Abre el proyecto backend en tu IDE (IntelliJ IDEA, Eclipse o VS Code).
 # 2. Navega hasta la clase principal en la siguiente ruta:
      src/main/java/co/edu/uniquindio/sistemahotelmanager/HotelApplication.java
-
 # 3. Haz clic en el botón Run (▶) sobre la clase HotelApplication, o ejecútala con clic derecho → Run 'HotelApplication'.
 ```
 
@@ -210,10 +209,10 @@ npm run dev
 
 ### Acceso al Frontend (login simulado)
 
-| Rol | Usuario  | Contraseña  |
-|---|----------|-------------|
-| Administrador | `admin`  | `admin2024` |
-| Recepcionista | `mari.l` | `admin123`  |
+| Rol | Usuario   | Contraseña  |
+|---|-----------|-------------|
+| Administrador | `admin`   | `admin2024` |
+| Recepcionista | `maria.l` | `admin123`  |
 
 ### Huéspedes precargados en el Backend
 
