@@ -39,7 +39,96 @@ El sistema contempla dos perfiles de usuario con vistas y permisos diferenciados
 ##  Arquitectura del Proyecto
 
 El proyecto sigue una arquitectura **cliente-servidor** con separación completa entre frontend y backend, comunicados mediante API REST con JSON.
+```text
+SistemaHotelManager/
+│
+├── backend/
+│   └── backendHotel/
+│       ├── src/
+│       ├── pom.xml
+│       └── target/
+│
+├── frontend/
+│   └── frontendHotel/
+│       ├── src/
+│       ├── package.json
+│       ├── vite.config.ts
+│       └── node_modules/
+│
+└── package-lock.json
+```
 
+---
+# Estructura del Backend
+
+```text
+backend/backendHotel/src/main/java/co/edu/uniquindio/sistemahotelmanager/
+│
+├── Controller/
+├── data/
+├── dto/
+├── enums/
+├── model/
+├── service/
+└── HotelApplication.java
+```
+
+## Componentes principales
+
+### Controllers
+
+Manejo de endpoints REST:
+
+- AuthController
+- DashboardController
+- EstadiaController
+- HabitacionController
+- HuespedController
+- PagoController
+- ReservaController
+- UsuarioController
+
+### Models
+
+Entidades principales del sistema:
+
+- Usuario
+- Huesped
+- Administrador
+- Recepcionista
+- PersonalLimpieza
+- Habitacion
+- Reserva
+- Estadia
+- Pago
+- CategoriaHabitacion
+
+### Services
+
+Lógica de negocio del sistema.
+
+### DTOs
+
+Objetos para intercambio de datos entre frontend y backend.
+
+### DataInitializer
+
+Clase encargada de cargar datos demo automáticamente al iniciar la aplicación.
+
+---
+
+# Estructura del Frontend
+
+```text
+frontend/frontendHotel/
+│
+├── src/
+├── package.json
+├── vite.config.ts
+├── .env.example
+├── SISTEMA_AUTH.md
+└── index.html
+```
 
 
 ---
@@ -117,7 +206,7 @@ npm run dev
 
 ---
 
-##  Usuarios de Prueba
+##  Usuarios de Prueba (DEMO)
 
 ### Acceso al Frontend (login simulado)
 
@@ -241,7 +330,6 @@ npm run dev
 - Registrar y aprobar pagos
 - Gestionar huéspedes
 
-> El control de acceso se aplica tanto en las rutas del frontend (`ProtectedRoute`) como en la navegación lateral (`MainLayout`), que muestra menús distintos según el rol.
 
 ---
 
